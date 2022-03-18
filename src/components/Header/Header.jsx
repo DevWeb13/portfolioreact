@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 const Header = () => {
   return (
     <header className="header">
-     
-      <img src="./assets/logo.png" className="logo" alt="logo" />
-     
-      
+      <div className="logo"></div>
       <nav className="navHeader">
         <NavLink
           to="/"
@@ -15,7 +13,7 @@ const Header = () => {
         >
           Accueil
         </NavLink>
-        
+
         <NavLink
           to="/projets"
           className={(nav) => (nav.isActive ? 'navActive' : null)}
@@ -29,6 +27,7 @@ const Header = () => {
           Me contacter
         </NavLink>
       </nav>
+      <ToggleTheme />
     </header>
   );
 };

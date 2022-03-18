@@ -13,16 +13,11 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />}></Route>
-          </Routes>
-          <Routes>
             <Route path="/projets" element={<Projets />}></Route>
-          </Routes>
-          <Routes>
             <Route path="/contact" element={<Contact />}></Route>
           </Routes>
         </BrowserRouter>
       </React.StrictMode>
-      
     </div>
   );
 }

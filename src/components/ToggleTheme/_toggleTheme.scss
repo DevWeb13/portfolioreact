@@ -1,0 +1,63 @@
+.toggleTheme {
+  position            : absolute;
+  right               : 50%;
+  top                 : 0.9375rem;
+  transform           : translateX(50%);
+  @include small {
+    right             : 0.9375rem;
+    transform         : translateX(0);
+  }
+  .checkbox {
+    display           : none;
+    &:checked + .label .ball {
+      transform       : translateX(1.375rem);
+    }
+  }
+  .label {
+    align-items       : center;
+    background        : rgb(182, 182, 182);
+    border-radius     : 3.125rem;
+    box-shadow        : 0.125rem 0.0625rem 0.0625rem $colorPrimary;
+    cursor            : pointer;
+    display           : flex;
+    height            : 1.625rem;
+    justify-content   : space-around;
+    transform         : scale(0.8);
+    width             : 3.125rem;
+    @include small {
+      transform       : scale(0.9);
+    }
+    @include medium {
+      transform       : scale(1);
+    }
+    @include large {
+      transform       : scale(1.1);
+    }
+    @include xLarge {
+      transform       : scale(1.2);
+    }
+
+    .fa-sun {
+      color           : rgb(255, 89, 0);
+    }
+    .ball {
+      background      : $colorPrimary;
+      border-radius   : 50%;
+      height          : 1.25rem;
+      left            : 0.3125rem;
+      position        : absolute;
+      transform       : translateX(0);
+      transition      : 0.4s cubic-bezier(0.45, -1, 0.35, 1.78);
+      width           : 1.25rem;
+    }
+  }
+}
+// DARK MODE
+.dark {
+  .label {
+    box-shadow        : 0.125rem 0.0625rem 0.0625rem #09fbba;
+    .ball {
+      background      : $colorDarkSecondary;
+    }
+  }
+}

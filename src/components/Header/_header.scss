@@ -1,58 +1,73 @@
 .header {
-  display: flex;
-  // flex-direction: column;
-  // height:200px;
-  // background-color: #0048e8;
-  align-items: center;
-  justify-content: space-between;
-  height: 150px;
+  align-items           : center;
+  border-bottom         : 0.0625rem solid $colorPrimary;
+  display               : flex;
+  height                : 9.375rem;
+  justify-content       : space-between;
   @include medium {
-    height: 200px;
+    height              : 12.5rem;
   }
   @include large {
-    height: 250px;
+    height              : 15.625rem;
   }
   @include xLarge {
-    height: 300px;
+    height              : 18.75rem;
   }
   .logo {
-    width: 150px;
+    background          : url('../../assets/logo.png');
+    background-size     : cover;
+    display             : flex;
+    height              : 100%;
+    width               : 9.375rem;
     @include medium {
-      width: 200px;
+      width             : 12.5rem;
     }
     @include large {
-      width: 250px;
+      width             : 15.625rem;
     }
     @include xLarge {
-      width: 300px;
+      width             : 18.75rem;
     }
   }
   .navHeader {
-    font-family: 'Gagalin';
-display: flex;
-    flex-direction: column;
-    width: 150px;
-    height: 100%;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 15px;
+    align-items         : center;
+    display             : flex;
+    flex-direction      : column;
+    font-family         : 'Gagalin';
+    font-size           : 0.9375rem;
+    height              : 100%;
+    justify-content     : space-around;
+    width               : 9.375rem;
     @include small {
-      flex-direction: row;
-      width: 100%;
+      flex-direction    : row;
+      width             : 100%;
     }
     @include medium {
-      font-size: 20px;
+      font-size         : 1.25rem;
     }
     @include large {
-      font-size: 25px;
+      font-size         : 1.5625rem;
     }
     @include xLarge {
-      font-size: 30px;
+      font-size         : 1.875rem;
     }
     .navActive {
-      
-      color: darken($colorPrimary, 10%);
-      transform: scale(1.1);
+      color             : darken($colorPrimary, 10%);
+      transform         : scale(1.1);
+    }
+  }
+}
+
+// DARK MODE
+.dark {
+  .header {
+    border-bottom       : 0.0625rem solid $colorDarkSecondary;
+    .logo {
+      background        : url('../../assets/logoDark.png');
+      background-size   : cover;
+    }
+    .navActive {
+      color             : $colorDarkSecondary;
     }
   }
 }
