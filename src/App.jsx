@@ -12,9 +12,9 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/projets" element={<Projets />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/projets" element={<Projets />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
       </React.StrictMode>

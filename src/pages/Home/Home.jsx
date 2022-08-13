@@ -1,12 +1,8 @@
 import React from 'react';
+import ConstructionLogo from '../../components/ConstructionLogo/ConstructionLogo';
 
-
-const Home = () => {
-  return (
-    <div>
-      <h1>Accueil</h1>
-    </div>
-  );
-};
+function Home() {
+  return <ConstructionLogo />;
+}
 
 export default Home;

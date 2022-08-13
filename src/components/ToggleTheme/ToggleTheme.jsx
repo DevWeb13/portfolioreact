@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ToggleTheme = () => {
+function ToggleTheme() {
   function toggleTheme() {
     document.body.classList.toggle('dark');
   }
@@ -14,12 +14,12 @@ const ToggleTheme = () => {
         onChange={toggleTheme}
       />
       <label htmlFor="darkMode" className="label">
-        <i className="fas fa-moon"></i>
-        <i className="fas fa-sun"></i>
-        <div className="ball"></div>
+        <i className="fas fa-moon" />
+        <i className="fas fa-sun" />
+        <div className="ball" />
       </label>
     </div>
   );
-};
+}
 
 export default ToggleTheme;

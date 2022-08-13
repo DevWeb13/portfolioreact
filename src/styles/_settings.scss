@@ -47,8 +47,21 @@ $breakpoints: (
 
 body {
   background: $colorLight;
-  transition: 0.2s linear;
+  transition: 5s linear;
   color: $colorDark;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 1440px;
 }
 
 li {
@@ -72,7 +85,7 @@ button {
 
 // DARK MODE
 .dark {
-  background: #333;
+  background: $colorDark;
   a {
     color: lighten($colorSecondary, 20%);
     &:hover {
