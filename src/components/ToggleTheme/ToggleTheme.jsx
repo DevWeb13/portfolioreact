@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 function ToggleTheme() {
   function toggleTheme() {
@@ -14,8 +16,8 @@ function ToggleTheme() {
         onChange={toggleTheme}
       />
       <label htmlFor="darkMode" className="label">
-        <i className="fas fa-moon" />
-        <i className="fas fa-sun" />
+        <FontAwesomeIcon className="fas fa-moon" icon={faMoon} />
+        <FontAwesomeIcon className="fas fa-sun" icon={faSun} />
         <div className="ball" />
       </label>
     </div>
