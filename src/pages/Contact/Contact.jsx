@@ -1,11 +1,8 @@
 import React from 'react';
+import ConstructionLogo from '../../components/ConstructionLogo/ConstructionLogo';
 
 function Contact() {
-  return (
-    <div>
-      <h1>Contact</h1>
-    </div>
-  );
+  return <ConstructionLogo />;
 }
 
 export default Contact;
