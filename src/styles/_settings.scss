@@ -77,7 +77,7 @@ a {
   transform: scale(1);
   &:hover {
     transform: scale(1.1);
-    color: darken($colorSecondary, 20%);
+    color: lighten($colorPrimary, 15%);
   }
 }
 
@@ -91,7 +91,7 @@ button {
   a {
     color: lighten($colorSecondary, 20%);
     &:hover {
-      color: lighten($colorSecondary, 50%);
+      color: lighten($colorDarkSecondary, 20%);
     }
   }
 }

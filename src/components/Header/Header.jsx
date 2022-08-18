@@ -7,24 +7,28 @@ function Header() {
     <header className="header">
       <div className="logo" />
       <nav className="navHeader">
-        <NavLink to="/" className={(nav) => (nav.isActive ? 'navActive' : '')}>
+        <NavLink
+          to="/"
+          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
+        >
           Accueil
         </NavLink>
 
         <NavLink
           to="/projets"
-          className={(nav) => (nav.isActive ? 'navActive' : '')}
+          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
         >
           Mes projets
         </NavLink>
         <NavLink
           to="/contact"
-          className={(nav) => (nav.isActive ? 'navActive' : '')}
+          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
         >
           Me contacter
         </NavLink>
       </nav>
       <ToggleTheme />
+      <div className="line" />
     </header>
   );
 }

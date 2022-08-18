@@ -4,8 +4,8 @@ $headerHeightLarge: 15.625rem;
 $headerHeightXLarge: 18.75rem;
 
 .header {
+  position: relative;
   align-items: center;
-  border-bottom: 0.0625rem solid $colorPrimary;
   display: flex;
   height: $headerHeightSmall;
   justify-content: space-between;
@@ -38,7 +38,6 @@ $headerHeightXLarge: 18.75rem;
     align-items: center;
     display: flex;
     flex-direction: column;
-
     font-size: 0.9375rem;
     height: 100%;
     justify-content: space-around;
@@ -63,16 +62,39 @@ $headerHeightXLarge: 18.75rem;
   }
 }
 
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.0625rem;
+  width: 100%;
+  background: darken($colorPrimary, 10%);
+  // background: lighten(#18aeca, 50%)
+  // transform: rotate(45deg)
+}
+
+// TRANSITIONS
+.header {
+  .logo,
+  .navActive,
+  .line {
+    transition: 5s linear;
+  }
+}
+
 // DARK MODE
 .dark {
   .header {
-    border-bottom: 0.0625rem solid $colorDarkSecondary;
     .logo {
       background: url('../../assets/logoDark.png');
       background-size: cover;
     }
     .navActive {
       color: $colorDarkSecondary;
+    }
+    .line {
+      background: $colorDarkSecondary;
+      box-shadow: 0 0 20px 5px $colorDarkSecondary;
     }
   }
 }
