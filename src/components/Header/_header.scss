@@ -74,12 +74,11 @@ $headerHeightXLarge: 18.75rem;
 }
 
 // TRANSITIONS
-.header {
-  .logo,
-  .navActive,
-  .line {
-    transition: 5s linear;
-  }
+
+.logo,
+.navActive,
+.line {
+  transition: 5s linear;
 }
 
 // DARK MODE
