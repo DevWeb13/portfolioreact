@@ -87,6 +87,7 @@ button {
 
 // DARK MODE
 .dark {
+  transition: all 5s;
   background: $colorDark;
   a {
     color: lighten($colorSecondary, 20%);
