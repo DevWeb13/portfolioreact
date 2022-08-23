@@ -1,62 +1,27 @@
-$headerHeightSmall: 9.375rem;
-$headerHeightMedium: 12.5rem;
-$headerHeightLarge: 15.625rem;
-$headerHeightXLarge: 18.75rem;
-
 .header {
   position: relative;
   align-items: center;
   display: flex;
-  height: $headerHeightSmall;
+  height: $headerHeightXSmall;
   justify-content: space-between;
-  @include medium {
-    height: $headerHeightMedium;
-  }
-  @include large {
-    height: $headerHeightLarge;
-  }
-  @include xLarge {
-    height: $headerHeightXLarge;
-  }
+  max-width: 100vw;
   .logo {
     background: url('../../assets/logo.png');
     background-size: cover;
     display: flex;
     height: 100%;
     width: 9.375rem;
-    @include medium {
-      width: 12.5rem;
-    }
-    @include large {
-      width: 15.625rem;
-    }
-    @include xLarge {
-      width: 18.75rem;
-    }
   }
   .navHeader {
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-size: 0.9375rem;
+    font-size: $fontSizeXSmall;
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 9.375rem;
-    @include small {
-      flex-direction: row;
-      width: 100%;
-    }
-    @include medium {
-      font-size: 1.25rem;
-    }
-    @include large {
-      font-size: 1.5625rem;
-    }
-    @include xLarge {
-      font-size: 1.875rem;
-    }
     .navActive {
-      color: darken($colorPrimary, 10%);
+      color: $colorPrimaryDarken;
       transform: scale(1.1);
     }
   }
@@ -68,9 +33,72 @@ $headerHeightXLarge: 18.75rem;
   left: 0;
   height: 0.0625rem;
   width: 100%;
-  background: darken($colorPrimary, 10%);
+  background: $colorPrimaryDarken;
   // background: lighten(#18aeca, 50%)
   // transform: rotate(45deg)
+}
+
+// RESPONSIVE
+@include small {
+  .header {
+    height: $headerHeightSmall;
+    .navHeader {
+      flex-direction: row;
+      width: 100%;
+      font-size: $fontSizeSmall;
+    }
+  }
+}
+
+@include medium {
+  .header {
+    height: $headerHeightMedium;
+    .logo {
+      width: 12.5rem;
+    }
+    .navHeader {
+      font-size: $fontSizeMedium;
+    }
+  }
+}
+
+@include large {
+  .header {
+    height: $headerHeightLarge;
+    .logo {
+      width: 15.625rem;
+    }
+    .navHeader {
+      font-size: $fontSizeLarge;
+    }
+  }
+}
+
+@include xLarge {
+  .header {
+    height: $headerHeightXLarge;
+    .logo {
+      width: 18.75rem;
+    }
+    .navHeader {
+      font-size: $fontSizeXLarge;
+    }
+  }
+}
+
+// LANDSCAPEMODE
+@media (orientation: landscape) {
+  @include heightSmall {
+    .header {
+      height: $headerHeightSmall;
+      .logo {
+        width: 8.375rem;
+      }
+      .navHeader {
+        font-size: $fontSizeSmall;
+      }
+    }
+  }
 }
 
 // TRANSITIONS

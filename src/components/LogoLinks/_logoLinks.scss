@@ -1,0 +1,47 @@
+.logoLinksContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  .logoLink {
+    height: calc($fontSizeXSmall + $gapSmall);
+    width: calc($fontSizeXSmall + $gapSmall);
+    @include small {
+      height: calc($fontSizeSmall + $gapSmall);
+      width: calc($fontSizeSmall + $gapSmall);
+    }
+    @include medium {
+      height: calc($fontSizeMedium + $gapSmall);
+      width: calc($fontSizeMedium + $gapSmall);
+    }
+    @include large {
+      height: calc($fontSizeLarge + $gapSmall);
+      width: calc($fontSizeLarge + $gapSmall);
+    }
+    @include xLarge {
+      height: calc($fontSizeXLarge + $gapSmall);
+      width: calc($fontSizeXLarge + $gapSmall);
+    }
+  }
+  .twitterLogo {
+    fill: #1d9bf0;
+  }
+  .linkedinLogo {
+    fill: #0a66c3;
+  }
+  .codingameLogo {
+    height: calc($fontSizeXSmall + 3px);
+    @include small {
+      height: calc($fontSizeSmall + 3px);
+    }
+    @include medium {
+      height: calc($fontSizeMedium + 3px);
+    }
+    @include large {
+      height: calc($fontSizeLarge + 3px);
+    }
+    @include xLarge {
+      height: calc($fontSizeXLarge + 3px);
+    }
+  }
+}

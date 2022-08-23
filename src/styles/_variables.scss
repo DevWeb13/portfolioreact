@@ -1,0 +1,26 @@
+/* ***************** COLORS ***************** */
+$colorPrimary: #0048e8;
+$colorPrimaryDarken: darken($colorPrimary, 10%);
+
+$colorSecondary: #959595;
+$colorSecondaryDarken: darken($colorSecondary, 20%);
+$colorLight: #eee;
+$colorDark: #333;
+$colorDarkSecondary: #09fbba;
+
+/******************* HEADERHEIGHT *******************/
+$headerHeightXSmall: 9.375rem;
+$headerHeightSmall: 7.375rem;
+$headerHeightMedium: 10.5rem;
+$headerHeightLarge: 12.75rem;
+$headerHeightXLarge: 14.75rem;
+
+/* ***************** FONT-SIZE ***************** */
+$fontSizeXSmall: 1rem;
+$fontSizeSmall: 1.2rem;
+$fontSizeMedium: 1.4rem;
+$fontSizeLarge: 1.6rem;
+$fontSizeXLarge: 1.8rem;
+
+/* ***************** GAP ***************** */
+$gapSmall: 0.5rem;

@@ -4,8 +4,9 @@
   align-items: center;
   justify-content: space-evenly;
   height: calc(100vh - $headerHeightSmall);
-  color: darken($colorPrimary, 10%);
+  color: $colorPrimaryDarken;
   flex: 1;
+  text-align: center;
   h2 {
     letter-spacing: 0.2rem;
     transition: 5s linear;
@@ -18,7 +19,7 @@
   animation: work 0.7s steps(1, start) infinite;
   font-size: 0.1875rem; /* pixel size */
   height: 1em;
-  color: darken($colorPrimary, 10%);
+  color: $colorPrimaryDarken;
   margin-bottom: 8rem;
 
   position: relative;

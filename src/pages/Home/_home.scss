@@ -1,3 +1,140 @@
-h1{
-  // font-family: 'Gagalin';
+.home {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - $headerHeightXSmall - $gapSmall);
+  height: fit-content;
+
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    text-align: center;
+    width: 80%;
+
+    h1 {
+      font-size: $fontSizeXSmall;
+      font-weight: bold;
+      color: $colorPrimary;
+    }
+    p {
+      font-size: calc($fontSizeXSmall - 1px);
+      font-family: 'ubuntu', sans-serif;
+      color: $colorDark;
+      span {
+        font-weight: bold;
+        // font-family: 'Gagalin', sans-serif;
+      }
+      a {
+        color: $colorPrimary;
+        &:hover {
+          color: $colorPrimaryDarken;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@include small() {
+  .home {
+    min-height: calc(100vh - $headerHeightSmall - $gapSmall);
+
+    .homeContainer {
+      width: 75%;
+
+      h1 {
+        font-size: $fontSizeSmall;
+      }
+      p {
+        font-size: calc($fontSizeSmall - 1px);
+      }
+    }
+  }
+}
+
+@include medium() {
+  .home {
+    min-height: calc(100vh - $headerHeightMedium - $gapSmall);
+    // height: calc(100vh - $headerHeightMedium);
+
+    .homeContainer {
+      width: 70%;
+
+      h1 {
+        font-size: $fontSizeMedium;
+      }
+      p {
+        font-size: calc($fontSizeMedium - 1px);
+      }
+    }
+  }
+}
+
+@include large() {
+  .home {
+    min-height: calc(100vh - $headerHeightLarge - $gapSmall);
+    // height: calc(100vh - $headerHeightLarge);
+
+    .homeContainer {
+      width: 65%;
+
+      h1 {
+        font-size: $fontSizeLarge;
+      }
+      p {
+        font-size: calc($fontSizeLarge - 1px);
+      }
+    }
+  }
+}
+
+@include xLarge() {
+  .home {
+    min-height: calc(100vh - $headerHeightXLarge - $gapSmall);
+    // height: calc(100vh - $headerHeightXLarge);
+    .homeContainer {
+      width: 60%;
+
+      h1 {
+        font-size: $fontSizeXLarge;
+      }
+      p {
+        font-size: calc($fontSizeXLarge - 1px);
+      }
+    }
+  }
+}
+
+// // LANDSCAPEMODE
+// @media (orientation: landscape) {
+//   .home {
+//     @include heightSmall {
+//       margin: 20px 0;
+
+//       height: fit-content;
+//       min-height: calc(100vh - $headerHeightSmall);
+//     }
+//   }
+// }
+
+// DARK MODE
+.dark {
+  .home {
+    .homeContainer {
+      h1 {
+        color: $colorDarkSecondary;
+      }
+      p {
+        color: $colorLight;
+        a {
+          color: $colorDarkSecondary;
+          &:hover {
+            color: $colorDarkSecondary;
+          }
+        }
+      }
+    }
+  }
 }
