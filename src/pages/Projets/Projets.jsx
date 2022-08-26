@@ -1,8 +1,8 @@
 import React from 'react';
-import ConstructionLogo from '../../components/ConstructionLogo/ConstructionLogo';
+import DisplayProjects from '../../components/DisplayProjects/DisplayProjects';
 
 function Projets() {
-  return <ConstructionLogo />;
+  return <DisplayProjects />;
 }
 
 export default Projets;

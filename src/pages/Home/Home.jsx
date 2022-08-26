@@ -22,7 +22,7 @@ function Home() {
           actuellement la formation
           <br />
           <a href="https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react">
-            &quot; Développeur d&apos;application - JavaScript React&quot;
+            &quot;Développeur d&apos;application - JavaScript React&quot;
           </a>
           .
         </p>

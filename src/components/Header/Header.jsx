@@ -13,7 +13,6 @@ function Header() {
         >
           Accueil
         </NavLink>
-
         <NavLink
           to="/projets"
           className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
