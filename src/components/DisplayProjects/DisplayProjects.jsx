@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import getEmployeesList from '../../services/dataManager';
+import getProjectsList from '../../services/dataManager';
 
 function DisplayProjects() {
   const [projects, setProjects] = useState([{}]);
   const [loader, setLoader] = useState(true);
 
   async function getData() {
-    const data = await getEmployeesList(projects);
+    const data = await getProjectsList();
     setProjects(data);
     setLoader(false);
   }

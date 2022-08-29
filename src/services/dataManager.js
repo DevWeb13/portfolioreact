@@ -1,13 +1,13 @@
-export default async function getProjectsList(projects) {
+export default async function getProjectsList() {
   try {
     const response = await fetch('/projects', {
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
     });
     return response.json();
   } catch (error) {
-    console.log(error);
-    return projects;
+    return console.log(error);
   }
 }
