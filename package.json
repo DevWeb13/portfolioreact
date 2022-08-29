@@ -25,7 +25,6 @@
     "eject": "react-scripts eject",
     "docs": "jsdoc -c jsdoc.conf.json"
   },
-  "proxy": "https://backportfoliohero.herokuapp.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
