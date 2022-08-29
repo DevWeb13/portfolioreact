@@ -1,14 +1,16 @@
 /* ***************** COLORS ***************** */
 $colorPrimary: #0048e8;
 $colorPrimaryDarken: darken($colorPrimary, 10%);
+$colorPrimaryLighten: lighten($colorPrimary, 10%);
 
 $colorSecondary: #959595;
 $colorSecondaryDarken: darken($colorSecondary, 20%);
 $colorLight: #eee;
 $colorDark: #333;
 $colorDarkSecondary: #09fbba;
+$colorDarkSecondaryDarken: darken($colorDarkSecondary, 20%);
 
-/******************* HEADERHEIGHT *******************/
+/******************* HEADER HEIGHT *******************/
 $headerHeightXSmall: 9.375rem;
 $headerHeightSmall: 7.375rem;
 $headerHeightMedium: 10.5rem;
@@ -24,3 +26,6 @@ $fontSizeXLarge: 1.8rem;
 
 /* ***************** GAP ***************** */
 $gapSmall: 0.5rem;
+
+/* ***************** H1 HEIGHT ***************** */
+$h1Height: 2.3125rem;

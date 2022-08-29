@@ -50,7 +50,6 @@ $breakpoints: (
 body {
   background: $colorLight;
   color: $colorDark;
-  font-family: 'Gagalin', sans-serif;
 }
 
 #root {
@@ -77,10 +76,31 @@ p {
   cursor: default;
 }
 
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: $colorPrimaryLighten;
+  font-size: $fontSizeXSmall;
+  font-family: 'Helvetica Neue', sans-serif;
+  @include small {
+    font-size: $fontSizeSmall;
+  }
+  @include medium {
+    font-size: $fontSizeMedium;
+  }
+  @include large {
+    font-size: $fontSizeLarge;
+  }
+  @include xLarge {
+    font-size: $fontSizeXLarge;
+  }
+}
+
 li {
   list-style-type: none;
 }
 a {
+  font-family: 'Gagalin', sans-serif;
   text-decoration: none;
   cursor: pointer;
   color: $colorSecondary;
@@ -99,6 +119,9 @@ button {
 // DARK MODE
 .dark {
   background: $colorDark;
+  h1 {
+    color: $colorDarkSecondary;
+  }
   a {
     color: lighten($colorSecondary, 20%);
     &:hover {
