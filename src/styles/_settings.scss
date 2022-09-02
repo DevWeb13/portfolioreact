@@ -50,6 +50,8 @@ $breakpoints: (
 body {
   background: $colorLight;
   color: $colorDark;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: calc(0.5rem + 0.5vw);
 }
 
 #root {
@@ -63,7 +65,7 @@ body {
   flex-direction: column;
   flex: 1;
   max-width: 1440px;
-  gap: $gapSmall;
+  gap: $gap;
 }
 
 h1,
@@ -81,7 +83,7 @@ h1 {
   font-weight: bold;
   color: $colorPrimaryLighten;
   font-size: $fontSizeXSmall;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Comic Sans MS', sans-serif;
   @include small {
     font-size: $fontSizeSmall;
   }

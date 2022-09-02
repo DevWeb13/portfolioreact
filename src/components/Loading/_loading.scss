@@ -1,0 +1,76 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: $colorDark;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: $colorPrimary;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: $colorDark;
+  }
+}
+
+@mixin loaderDivMixin {
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px solid transparent;
+  animation: rotate linear 3.5s infinite;
+}
+
+.loader {
+  position: relative;
+  margin: 75px auto;
+  width: 150px;
+  height: 150px;
+  display: block;
+  overflow: hidden;
+  @include loaderDivMixin;
+  border-radius: 50%;
+  padding: 4px;
+  animation: rotate 4s infinite linear;
+  div {
+    height: 100%;
+    @include loaderDivMixin;
+    border-radius: 50%;
+    padding: 4px;
+    animation: rotate 4s infinite linear;
+  }
+}
+
+div:hover {
+  animation-play-state: paused;
+}
+
+/* ******************* DARK MODE ******************* */
+@keyframes rotateDark {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: $colorLight;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: $colorDarkSecondaryDarken;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: $colorLight;
+  }
+}
+
+.dark {
+  .loader {
+    animation: rotateDark 4s infinite linear;
+    div {
+      animation: rotateDark 4s infinite linear;
+    }
+  }
+}
+
+/* 
+ *  CSS3 Spinners
+ *  http://codepen.io/brunjo/pen/ByoaXV
+ *  by Bruno Joseph
+ */

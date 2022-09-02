@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import getProjectsList from '../../services/dataManager';
+import Loading from '../Loading/Loading';
 
 function DisplayProjects() {
-  const [projects, setProjects] = useState([{}]);
+  const [projects, setProjects] = useState([
+    {
+      _id: null,
+      name: '',
+      description: '',
+      image: '',
+      link: '',
+      technologies: [],
+      gitHub: '',
+    },
+  ]);
   const [loader, setLoader] = useState(true);
 
   async function getData() {
@@ -16,7 +27,7 @@ function DisplayProjects() {
   }, []);
 
   return loader ? (
-    <div>Loading...</div>
+    <Loading />
   ) : (
     <div className="displayProjects">
       <h1>Mes projets</h1>
