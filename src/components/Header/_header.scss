@@ -35,6 +35,7 @@
   height: 0.0625rem;
   width: 100%;
   background: $colorPrimaryDarken;
+  transition: 5s linear;
 }
 
 // RESPONSIVE
@@ -98,12 +99,6 @@
       }
     }
   }
-}
-
-// TRANSITIONS
-
-.line {
-  transition: 5s linear;
 }
 
 // DARK MODE
