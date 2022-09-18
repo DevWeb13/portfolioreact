@@ -1,0 +1,82 @@
+.zeldaContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  max-width: 100vw;
+  .zelda {
+    // width: calc(100% - 2.5vw);
+    width: 100%;
+    .zeldaPagePresentation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      background: url('../../assets/zelda/map.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      bottom: $gap;
+      min-height: calc(100vh - $headerHeightXSmall);
+      @include small {
+        min-height: calc(100vh - $headerHeightSmall);
+      }
+      @include medium {
+        min-height: calc(100vh - $headerHeightMedium);
+      }
+      @include large {
+        min-height: calc(100vh - $headerHeightLarge);
+      }
+      @include xLarge {
+        min-height: calc(100vh - $headerHeightXLarge);
+      }
+      p,
+      a {
+        font-size: calc(1rem + 1vw);
+        color: black;
+        text-shadow: 0 0 5px black;
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+      }
+      a {
+        h1 {
+          font-size: calc(1.5rem + 1vw);
+          max-width: calc(100vw - 1rem);
+          cursor: pointer;
+        }
+        .locomotiveLogo {
+          background: url('../../assets/zelda/58807621-67aeec00-85e6-11e9-8e3a-3fe4123ee76c.png')
+            center/cover;
+          width: 100%;
+          height: calc(100px + 5vw);
+        }
+      }
+
+      .arc {
+        position: relative;
+        left: 5px;
+        width: calc(100px + 5vw);
+        height: calc(100px + 5vw);
+        background-image: url('../../assets/zelda/Arc_de_lumiere.png');
+        background-size: cover;
+        transform: rotateZ(240deg);
+      }
+    }
+    .zeldaGame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      min-height: 100vh;
+      max-width: 100vw;
+    }
+    .zeldaImg0 {
+      height: 100px;
+      width: 100px;
+      background-image: url('../../assets/zelda/link0.png');
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

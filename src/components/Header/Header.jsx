@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
@@ -24,6 +24,12 @@ function Header() {
           className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
         >
           Me contacter
+        </NavLink>
+        <NavLink
+          to="/zelda"
+          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
+        >
+          Zelda
         </NavLink>
       </nav>
       <ToggleTheme />
