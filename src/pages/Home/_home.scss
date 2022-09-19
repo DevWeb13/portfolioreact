@@ -1,7 +1,7 @@
 .home {
   display: flex;
   justify-content: center;
-  min-height: calc(100vh - $headerHeightXSmall - $gapSmall);
+  min-height: calc(100vh - $headerHeightXSmall - $gap);
   height: fit-content;
 
   .homeContainer {
@@ -33,7 +33,7 @@
 
 @include small() {
   .home {
-    min-height: calc(100vh - $headerHeightSmall - $gapSmall);
+    min-height: calc(100vh - $headerHeightSmall - $gap);
 
     .homeContainer {
       width: 75%;
@@ -47,7 +47,7 @@
 
 @include medium() {
   .home {
-    min-height: calc(100vh - $headerHeightMedium - $gapSmall);
+    min-height: calc(100vh - $headerHeightMedium - $gap);
     // height: calc(100vh - $headerHeightMedium);
 
     .homeContainer {
@@ -62,7 +62,7 @@
 
 @include large() {
   .home {
-    min-height: calc(100vh - $headerHeightLarge - $gapSmall);
+    min-height: calc(100vh - $headerHeightLarge - $gap);
     // height: calc(100vh - $headerHeightLarge);
 
     .homeContainer {
@@ -77,7 +77,7 @@
 
 @include xLarge() {
   .home {
-    min-height: calc(100vh - $headerHeightXLarge - $gapSmall);
+    min-height: calc(100vh - $headerHeightXLarge - $gap);
     // height: calc(100vh - $headerHeightXLarge);
     .homeContainer {
       width: 60%;

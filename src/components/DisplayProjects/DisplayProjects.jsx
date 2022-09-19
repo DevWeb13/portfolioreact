@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import getProjectsList from '../../services/dataManager';
+import { getProjectsList } from '../../services/dataManager';
 import Loading from '../Loading/Loading';
 
 function DisplayProjects() {
