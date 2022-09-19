@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import getProjectsList from '../../services/dataManager';
 import Loading from '../Loading/Loading';
+import htmlLogo from '../../assets/html-5-svgrepo-com.svg';
+import reactLogo from '../../assets/react-svgrepo-com.svg';
 
 function DisplayProjects() {
   const [projects, setProjects] = useState([
@@ -42,11 +44,13 @@ function DisplayProjects() {
                 <h3 className="description">{project.description}</h3>
                 <div className="technologyContainer">
                   {project.technologies.map((technology) => {
-                    return (
-                      <p className="technology" key={project.name + technology}>
-                        {technology}
-                      </p>
-                    );
+                    if (technology === 'html') {
+                      return <img src={htmlLogo} alt={technology} />;
+                    }
+                    if (technology === 'react') {
+                      return <img src={reactLogo} alt={technology} />;
+                    }
+                    return <p>{technology}</p>;
                   })}
                 </div>
 
