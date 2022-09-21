@@ -31,7 +31,7 @@ function DisplayProjects() {
     <Loading />
   ) : (
     <div className="displayProjects">
-      <h1>Mes projets</h1>
+      <h1 className="displayProjectsTitle">Mes projets</h1>
       <div className="projectsContainer">
         {projects.map((project) => {
           return (
@@ -45,7 +45,11 @@ function DisplayProjects() {
                   {project.technologies.map((technology) => {
                     return (
                       displayLogo(technology) !== '' && (
-                        <img src={displayLogo(technology)} alt={technology} />
+                        <img
+                          src={displayLogo(technology)}
+                          alt={technology}
+                          key={technology}
+                        />
                       )
                     );
                   })}

@@ -18,6 +18,13 @@
   }
 }
 
+.displayProjectsTitle {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .projectsContainer {
   color: $colorPrimary;
   padding: 1rem;
@@ -89,7 +96,6 @@
         width: 8.25rem;
         cursor: pointer;
         letter-spacing: 0.1rem;
-
         &:hover {
           background: $colorPrimaryDarken;
         }
@@ -101,6 +107,7 @@
 
     .description {
       max-width: 90%;
+      color: $colorPrimary;
     }
   }
   &:hover {
@@ -120,14 +127,29 @@
     .flip {
       .front,
       .back {
-        background: #c8c8c8;
+        background: $colorLight;
         color: $colorDark;
         border: 0.1rem solid $colorDarkSecondary;
         box-shadow: 0 0 10px 2.5px $colorDarkSecondary;
       }
       .name {
         color: $colorDarkSecondary;
-        text-shadow: 0px 5px 7px $colorDarkSecondary;
+      }
+      .description {
+        color: $colorDarkSecondaryDarken;
+        // text-shadow: 0px 5px 7px $colorDarkSecondary;
+      }
+      button {
+        background: $colorDarkSecondary;
+        .projectLink {
+          color: $colorDark;
+        }
+        &:hover {
+          background: $colorDarkSecondaryDarken;
+          .projectLink {
+            color: $colorLight;
+          }
+        }
       }
     }
   }
