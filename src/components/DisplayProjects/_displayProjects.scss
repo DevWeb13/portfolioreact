@@ -64,10 +64,10 @@
     background: white;
     border-radius: 3px;
     border: 0.2rem solid $colorPrimaryDarken;
-    box-shadow: 5px 5px 5px 0 $colorPrimaryLighten;
   }
   > .front {
     transform: rotateY(0deg);
+    box-shadow: 5px 5px 5px 0 $colorPrimaryLighten;
   }
   > .back {
     position: absolute;
@@ -131,6 +131,8 @@
         background: $colorLight;
         color: $colorDark;
         border: 0.2rem solid $colorDarkSecondaryDarken;
+      }
+      .front {
         box-shadow: 5px 5px 5px 0 $colorDarkSecondary;
       }
       .name {
