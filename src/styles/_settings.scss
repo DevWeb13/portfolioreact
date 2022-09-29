@@ -1,8 +1,6 @@
-@font-face {
-  font-family: 'Gagalin';
-  src: url('../fonts/Gagalin-Regular.ttf');
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Taviraj:ital,wght@1,900&display=swap');
 
 $breakpoints: (
   small: 576px,
@@ -50,7 +48,7 @@ $breakpoints: (
 body {
   background: $colorLight;
   color: $colorDark;
-  //font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Imprima', sans-serif;
   font-size: calc(0.5rem + 0.5vw);
 }
 
@@ -83,7 +81,7 @@ h1 {
   font-weight: bold;
   color: $colorPrimaryLighten;
   font-size: $fontSizeXSmall;
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Taviraj', sans-serif;
   @include small {
     font-size: $fontSizeSmall;
   }
@@ -102,7 +100,7 @@ li {
   list-style-type: none;
 }
 a {
-  font-family: 'Gagalin', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   text-decoration: none;
   cursor: pointer;
   color: $colorSecondary;
