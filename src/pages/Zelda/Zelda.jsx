@@ -44,10 +44,11 @@ function Zelda() {
   useEffect(() => {
     if (!loader) {
       const scroll = new LocomotiveScroll({
-        el: scrollRef.current,
+        // el: scrollRef.current,
         smooth: true,
         tablet: { smooth: true },
         smartphone: { smooth: true },
+        scrollFromAnywhere: true,
       });
     }
   }, [loader]);
@@ -55,19 +56,19 @@ function Zelda() {
   return loader ? (
     <Loading />
   ) : (
-    <div className="zeldaContainer" ref={scrollRef}>
+    <div className="zeldaContainer">
       <div className="zelda">
         <section
           className="zeldaPagePresentation"
           data-scroll-section
-          data-scroll-container
+          data-scroll-delay="100"
         >
           <p
             data-scroll
-            data-scroll-speed="-80"
+            data-scroll-speed="-50"
             data-scroll-position="top"
             data-scroll-direction="horizontal"
-            className="scroll-trigger"
+            className="zeldaPagePresentationText"
           >
             Made with
           </p>
