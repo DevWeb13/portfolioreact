@@ -10,6 +10,11 @@ import vercelLogo from '../assets/vercel-svgrepo-com.svg';
 import webpackLogo from '../assets/webpack-svgrepo-com.svg';
 import cssLogo from '../assets/css3-logo-svgrepo-com.svg';
 
+/**
+ * It takes a string as an argument and returns a logo image based on the string
+ * @param {string} technology - the name of the technology you want to display
+ * @returns {string} the logo of the technology that is passed in.
+ */
 export default function displayLogo(technology) {
   if (technology === 'html') {
     return htmlLogo;

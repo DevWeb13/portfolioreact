@@ -1,35 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import getProjectsList from '../../services/dataManager';
-import Loading from '../Loading/Loading';
+import React from 'react';
+import propTypes from 'prop-types';
 import displayLogo from '../../services/displayLogo';
 
-function DisplayProjects() {
-  const [projects, setProjects] = useState([
-    {
-      _id: null,
-      name: '',
-      description: '',
-      image: '',
-      link: '',
-      technologies: [],
-      gitHub: '',
-    },
-  ]);
-  const [loader, setLoader] = useState(true);
-
-  async function getData() {
-    const data = await getProjectsList();
-    setProjects(data);
-    setLoader(false);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  return loader ? (
-    <Loading />
-  ) : (
+function DisplayProjects({ projects }) {
+  return (
     <div className="displayProjects">
       <h1 className="displayProjectsTitle">Mes projets</h1>
       <div className="projectsContainer">
@@ -37,7 +11,15 @@ function DisplayProjects() {
           return (
             // eslint-disable-next-line no-underscore-dangle
             <div className="flip" key={project._id}>
-              <img className="front" src={project.image} alt="project" />
+              <div className="front">
+                <img className="logo" src={project.logo} alt="logo" />
+                <img
+                  className="imageProject"
+                  src={project.image}
+                  alt="imageProject"
+                />
+              </div>
+
               <h2 className="name">{project.name}</h2>
               <div className="back">
                 <h3 className="description">{project.description}</h3>
@@ -85,5 +67,19 @@ function DisplayProjects() {
     </div>
   );
 }
+
+DisplayProjects.propTypes = {
+  projects: propTypes.arrayOf(
+    propTypes.shape({
+      _id: propTypes.string,
+      name: propTypes.string,
+      description: propTypes.string,
+      image: propTypes.string,
+      link: propTypes.string,
+      technologies: propTypes.arrayOf(propTypes.string),
+      gitHub: propTypes.string,
+    }),
+  ).isRequired,
+};
 
 export default DisplayProjects;
