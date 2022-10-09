@@ -12,15 +12,14 @@ function DisplayProjects({ projects }) {
             // eslint-disable-next-line no-underscore-dangle
             <div className="flip" key={project._id}>
               <div className="front">
-                <img className="logo" src={project.logo} alt="logo" />
                 <img
                   className="imageProject"
                   src={project.image}
                   alt="imageProject"
                 />
               </div>
-
-              <h2 className="name">{project.name}</h2>
+              <img className="logo" src={project.logo} alt="logo" />
+              <h2>{project.name}</h2>
               <div className="back">
                 <h3 className="description">{project.description}</h3>
                 <div className="technologyContainer">
