@@ -9,26 +9,34 @@ function Home() {
         <p>
           <span>&quot;La Réponse Dev&quot;</span> vous souhaite la bienvenue.
         </p>
+        <p>Bonjour à tous !! 👋</p>
         <p>
-          <span>Bonjour à tous !! 👋</span>
-        </p>
-        <p>
-          Je m&apos;appelle <span>Loic</span>.
+          Je suis <span>Loic</span>.
           <br />
-          Je suis <span>développeur front-end spécialisé React</span>.
+          <span>Développeur front-end spécialisé React</span>.
         </p>
         <p>
-          Je développe des sites web depuis <span>2019</span> et je suis
-          actuellement la formation
+          Passionneé par le développement web, je développe des sites web en
+          autodidacte depuis <span>2019</span>.
+          <br />
+          Je suis à votre disposition pour réaliser vos projets.
+        </p>
+        <p>
+          <span>Je vous invite à découvrir mes réalisations</span> et à me
+          contacter pour plus d&apos;informations.
+        </p>
+        <p>
+          J&apos;ai recemment obtenu mon diplome certifiée RNCP <br />
+          <span>Titre de niveau 6 (RNCP27099)</span>
           <br />
           <a href="https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react">
             &quot;Développeur d&apos;application - JavaScript React&quot;
           </a>
-          .
         </p>
         <p>
           {' '}
-          En <span>apprentissage permanent</span>, cette formation me permet de
+          En <span>apprentissage permanent</span>, cette formation m&apos;a
+          permet de
           <span> renforcer mes acquis</span> et d&apos;
           <span>acquérir les compétences</span> clés de la profession de
           développeur.
