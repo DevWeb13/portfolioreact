@@ -79,10 +79,13 @@
     width: fit-content;
     max-height: calc(50px + 1vw);
     object-fit: cover;
-    background-color: #40a3ff42;
-    border-radius: 3px;
-    border: 0.2rem solid $colorPrimaryLighten;
-    box-shadow: 5px 5px 5px 0 $colorPrimaryLighten;
+  }
+  .name {
+    font-size: calc(1.5rem + 0.5vw);
+    height: calc(50px + 1vw);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
   }
   > .back {
     position: absolute;
@@ -150,11 +153,6 @@
       }
       .front {
         box-shadow: 5px 5px 5px 0 $colorDarkSecondary;
-      }
-      .logo {
-        border: 0.2rem solid $colorDarkSecondaryDarken;
-        box-shadow: 5px 5px 5px 0 $colorDarkSecondary;
-        background-color: #09fbbae0;
       }
       .name {
         color: $colorDarkSecondary;

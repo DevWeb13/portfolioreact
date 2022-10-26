@@ -18,8 +18,11 @@ function DisplayProjects({ projects }) {
                   alt="imageProject"
                 />
               </div>
-              <img className="logo" src={project.logo} alt="logo" />
-              <h2 className="name">{project.name}</h2>
+              {project.logo !== '' ? (
+                <img className="logo" src={project.logo} alt="logo" />
+              ) : (
+                <h2 className="name">{project.name}</h2>
+              )}
               <div className="back">
                 <h3 className="description">{project.description}</h3>
                 <div className="technologyContainer">
