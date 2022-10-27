@@ -36,7 +36,7 @@ function Home() {
         <p>
           {' '}
           En <span>apprentissage permanent</span>, cette formation m&apos;a
-          permet de
+          permis de
           <span> renforcer mes acquis</span> et d&apos;
           <span>acquérir les compétences</span> clés de la profession de
           développeur.

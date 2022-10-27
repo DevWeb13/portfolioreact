@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import displayLogo from '../../services/displayLogo';
+import displayProjectLogoOrName from '../../services/displayProjectLogoOrName';
 
 function DisplayProjects({ projects }) {
   return (
@@ -18,11 +19,7 @@ function DisplayProjects({ projects }) {
                   alt="imageProject"
                 />
               </div>
-              {project.logo !== '' ? (
-                <img className="logo" src={project.logo} alt="logo" />
-              ) : (
-                <h2 className="name">{project.name}</h2>
-              )}
+              {displayProjectLogoOrName(project)}
               <div className="back">
                 <h3 className="description">{project.description}</h3>
                 <div className="technologyContainer">

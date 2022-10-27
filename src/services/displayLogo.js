@@ -9,6 +9,7 @@ import mongoLogo from '../assets/mongodb-svgrepo-com.svg';
 import vercelLogo from '../assets/vercel-svgrepo-com.svg';
 import webpackLogo from '../assets/webpack-svgrepo-com.svg';
 import cssLogo from '../assets/css3-logo-svgrepo-com.svg';
+import rechartsLogo from '../assets/recharts.png';
 
 /**
  * It takes a string as an argument and returns a logo image based on the string
@@ -48,6 +49,9 @@ export default function displayLogo(technology) {
   }
   if (technology === 'css') {
     return cssLogo;
+  }
+  if (technology === 'recharts') {
+    return rechartsLogo;
   }
   return '';
 }
