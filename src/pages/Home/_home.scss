@@ -59,36 +59,6 @@
     }
   }
 }
-
-@include large() {
-  .home {
-    min-height: calc(100vh - $headerHeightLarge - $gap);
-    // height: calc(100vh - $headerHeightLarge);
-
-    .homeContainer {
-      width: 65%;
-
-      p {
-        font-size: calc($fontSizeLarge - 1px);
-      }
-    }
-  }
-}
-
-@include xLarge() {
-  .home {
-    min-height: calc(100vh - $headerHeightXLarge - $gap);
-    // height: calc(100vh - $headerHeightXLarge);
-    .homeContainer {
-      width: 60%;
-
-      p {
-        font-size: calc($fontSizeXLarge - 1px);
-      }
-    }
-  }
-}
-
 // DARK MODE
 .dark {
   .home {

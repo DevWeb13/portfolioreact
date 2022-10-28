@@ -8,6 +8,7 @@
   .logo {
     background: url('../../assets/logo.png');
     background-size: cover;
+    background-position: center;
     display: flex;
     height: 100%;
     width: 9.375rem;
@@ -32,7 +33,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 0.2rem;
+  height: 0.1rem;
   width: 100%;
   background: $colorPrimaryDarken;
   transition: 5s linear;
@@ -54,18 +55,6 @@
   .header {
     height: $headerHeightMedium;
     .logo {
-      width: 12.5rem;
-    }
-    .navHeader {
-      font-size: $fontSizeMedium;
-    }
-  }
-}
-
-@include large {
-  .header {
-    height: $headerHeightLarge;
-    .logo {
       width: 15.625rem;
     }
     .navHeader {
@@ -74,11 +63,10 @@
   }
 }
 
-@include xLarge {
+@include large {
   .header {
-    height: $headerHeightXLarge;
     .logo {
-      width: 18.75rem;
+      width: 17.1875rem;
     }
     .navHeader {
       font-size: $fontSizeXLarge;
