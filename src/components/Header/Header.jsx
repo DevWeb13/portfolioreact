@@ -3,8 +3,20 @@ import { NavLink } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 function Header() {
+  window.onscroll = () => {
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      if (window.scrollY > 100) {
+        backToTop.classList.remove('btHidden');
+        backToTop.classList.add('btVisible');
+      } else {
+        backToTop.classList.add('btHidden');
+        backToTop.classList.remove('btVisible');
+      }
+    }
+  };
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="logo" />
       <nav className="navHeader">
         <NavLink
@@ -28,6 +40,19 @@ function Header() {
       </nav>
       <ToggleTheme />
       <div className="line" />
+      <button
+        type="button"
+        id="backToTop"
+        className="btHidden"
+        aria-label="Back to top"
+        onClick={() => {
+          // scroll smoothly to the top of the page
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        }}
+      />
     </header>
   );
 }

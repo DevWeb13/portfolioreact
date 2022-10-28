@@ -1,21 +1,22 @@
 .displayProjects {
-  max-width: 100vw;
+  //max-width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  min-height: calc(100vh - $headerHeightXSmall - $gap);
-  @include small {
-    min-height: calc(100vh - $headerHeightSmall - $gap);
-  }
-  @include medium {
-    min-height: calc(100vh - $headerHeightMedium - $gap);
-  }
-  @include large {
-    min-height: calc(100vh - $headerHeightLarge - $gap);
-  }
-  @include xLarge {
-    min-height: calc(100vh - $headerHeightXLarge - $gap);
-  }
+  position: relative;
+  //justify-content: space-around;
+  // min-height: calc(100vh - $headerHeightXSmall - $gap);
+  // @include small {
+  //   min-height: calc(100vh - $headerHeightSmall - $gap);
+  // }
+  // @include medium {
+  //   min-height: calc(100vh - $headerHeightMedium - $gap);
+  // }
+  // @include large {
+  //   min-height: calc(100vh - $headerHeightLarge - $gap);
+  // }
+  // @include xLarge {
+  //   min-height: calc(100vh - $headerHeightXLarge - $gap);
+  // }
 }
 
 .displayProjectsTitle {
