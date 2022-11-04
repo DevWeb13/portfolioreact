@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import ConstructionLogo from '../../components/ConstructionLogo/ConstructionLogo';
+import Form from '../../components/Form/Form';
 
 function Contact() {
-  return <ConstructionLogo />;
+  return <Form />;
 }
 
 export default Contact;
