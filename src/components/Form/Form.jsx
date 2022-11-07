@@ -6,21 +6,22 @@ function Form() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  console.log(errors);
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
+
   return (
     <div className="formContainer">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
           {...register('firstName', {
-            required: 'This is required',
+            required: 'Champ requis',
             minLength: {
               value: 2,
               message: 'Min length is 2',
@@ -40,14 +41,14 @@ function Form() {
         <input
           type="text"
           {...register('lastName', {
-            required: 'This is required',
+            required: 'Champ requis',
             minLength: {
               value: 2,
-              message: 'Min length is 2',
+              message: '2 caractéres minimum',
             },
             maxLength: {
               value: 20,
-              message: 'Max length is 20',
+              message: '20 caractéres maximum',
             },
             pattern: /^[A-Za-z]+$/i,
           })}
@@ -57,38 +58,43 @@ function Form() {
         <input
           type="email"
           {...register('email', {
-            required: 'This is required',
+            required: 'Champ requis',
             pattern: {
-              message: 'Invalid email address',
+              message: 'Email invalide',
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             },
           })}
           placeholder="Email"
         />
+        <p>{errors.email?.message}</p>
         <input
           type="Tel"
           {...register('phone', {
             pattern: {
-              message: 'Invalid phone number',
+              message: 'Numéro invalide',
               value: /^[0-9]{10}$/i,
             },
           })}
           placeholder="Phone"
         />
+        <p>{errors.phone?.message}</p>
+
         <input
           {...register('message', {
-            required: 'This is required',
+            required: 'Champ requis',
             minLength: {
               value: 10,
-              message: 'Min length is 10',
+              message: '10 caractéres minimum',
             },
             maxLength: {
               value: 1500,
-              message: 'Max length is 1500',
+              message: '1500 caractéres maximum',
             },
           })}
           placeholder="Message"
         />
+        <p>{errors.message?.message}</p>
+
         <input type="submit" />
       </form>
     </div>
