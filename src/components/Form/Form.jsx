@@ -1,10 +1,11 @@
 // @ts-nocheck
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import propTypes from 'prop-types';
 import { TextField } from '@mui/material';
 import { getCommentsList, postComment } from '../../services/commentsManager';
+import getIpAdress from '../../services/getIpAdress';
 
 function Form({ comments, setComments }) {
   const {
@@ -14,38 +15,30 @@ function Form({ comments, setComments }) {
     formState: { errors },
   } = useForm();
 
-  const [comment, setComment] = useState({
-    prenom: '',
-    nom: '',
-    message: '',
-    email: '',
-  });
-
   async function onSubmit(data) {
-    console.log(data.prenom);
-    // setComment({
-    //   prenom: data.prenom,
-    //   nom: data.nom,
-    //   message: data.message,
-    //   email: data.email,
-    // });
-    console.log({ comment });
-    await postComment(
-      {
-        prenom: data.prenom,
-        nom: data.nom,
-        message: data.message,
-        email: data.email,
-      },
-      comments,
-    );
+    console.log({ data });
+    const ip = await getIpAdress();
+    if (!ip) {
+      // eslint-disable-next-line no-alert
+      alert(
+        "Error: Votre navigateur empéche l'envoi du commentaire. Veuillez essayer de désactiver votre bloqueur de publicité",
+      );
+      return;
+    }
+    const newComment = {
+      ...data,
+      date: new Date().toLocaleString(),
+      ip,
+    };
+
+    await postComment(newComment, comments);
     const newList = await getCommentsList(comments);
     setComments(newList);
     reset();
   }
-
+  console.log(new Date().toLocaleString());
   console.log(errors);
-  console.log(register);
+  /* console.log(register); */
   return (
     <div className="formContainer">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -71,9 +64,14 @@ function Form({ comments, setComments }) {
             },
           })}
           placeholder="Prénom"
+          size="small"
         />
+        {errors.prenom ? (
+          <p className="error">{errors.prenom.message}</p>
+        ) : (
+          <p className="error" />
+        )}
 
-        <p>{errors.prenom?.message}</p>
         <TextField
           id="outlined-basic"
           label="Nom"
@@ -95,9 +93,14 @@ function Form({ comments, setComments }) {
               message: 'Seulement des lettres',
             },
           })}
-          placeholder="Last Name"
+          placeholder="Nom"
+          size="small"
         />
-        <p>{errors.nom?.message}</p>
+        {errors.nom ? (
+          <p className="error">{errors.nom.message}</p>
+        ) : (
+          <p className="error" />
+        )}
         <TextField
           id="outlined-basic"
           label="Email"
@@ -112,23 +115,32 @@ function Form({ comments, setComments }) {
             },
           })}
           placeholder="Email"
+          size="small"
         />
-        <p>{errors.email?.message}</p>
+        {errors.email ? (
+          <p className="error">{errors.email.message}</p>
+        ) : (
+          <p className="error" />
+        )}
         <TextField
           id="outlined-basic"
           label="Tel."
           variant="outlined"
-          type="Tel"
+          type="tel"
           {...register('phone', {
             pattern: {
               message: 'Numéro invalide',
-              value: /^[0-9]{10}$/i,
+              value: /^[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}$/i,
             },
           })}
-          placeholder="Phone"
+          placeholder="XX XX XX XX XX"
+          size="small"
         />
-        <p>{errors.phone?.message}</p>
-
+        {errors.phone ? (
+          <p className="error">{errors.phone.message}</p>
+        ) : (
+          <p className="error" />
+        )}
         <TextField
           id="outlined-basic"
           label="Message"
@@ -147,10 +159,17 @@ function Form({ comments, setComments }) {
             },
           })}
           placeholder="Message"
+          // champ de texte multi-lignes
+          multiline
+          size="small"
         />
-        <p>{errors.message?.message}</p>
+        {errors.message ? (
+          <p className="error">{errors.message.message}</p>
+        ) : (
+          <p className="error" />
+        )}
 
-        <TextField type="submit" />
+        <TextField type="submit" size="small" className="submit" />
       </form>
     </div>
   );

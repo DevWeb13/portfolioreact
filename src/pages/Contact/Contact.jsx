@@ -18,7 +18,7 @@ function Contact() {
     getData();
   }, []);
   return (
-    <div className="commentsContainer">
+    <div className="contactContainer">
       <Form comments={comments} setComments={setComments} />
       <Comments comments={comments} />
     </div>
