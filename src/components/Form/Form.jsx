@@ -1,8 +1,12 @@
+// @ts-nocheck
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import propTypes from 'prop-types';
+import { TextField } from '@mui/material';
+import { getCommentsList, postComment } from '../../services/commentsManager';
 
-function Form() {
+function Form({ comments, setComments }) {
   const {
     register,
     handleSubmit,
@@ -10,53 +14,96 @@ function Form() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
-  };
+  const [comment, setComment] = useState({
+    prenom: '',
+    nom: '',
+    message: '',
+    email: '',
+  });
 
+  async function onSubmit(data) {
+    console.log(data.prenom);
+    // setComment({
+    //   prenom: data.prenom,
+    //   nom: data.nom,
+    //   message: data.message,
+    //   email: data.email,
+    // });
+    console.log({ comment });
+    await postComment(
+      {
+        prenom: data.prenom,
+        nom: data.nom,
+        message: data.message,
+        email: data.email,
+      },
+      comments,
+    );
+    const newList = await getCommentsList(comments);
+    setComments(newList);
+    reset();
+  }
+
+  console.log(errors);
+  console.log(register);
   return (
     <div className="formContainer">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Prénom"
+          variant="outlined"
           type="text"
-          {...register('firstName', {
+          error={!!errors.prenom}
+          {...register('prenom', {
             required: 'Champ requis',
             minLength: {
               value: 2,
-              message: 'Min length is 2',
+              message: 'Minimum 2 caractères',
             },
             maxLength: {
               value: 20,
-              message: 'Max length is 20',
+              message: 'Maximum 20 caractères',
             },
             pattern: {
               value: /^[A-Za-z]+$/i,
-              message: 'Alphabets only',
+              message: 'Seulement des lettres',
             },
           })}
-          placeholder="First Name"
+          placeholder="Prénom"
         />
-        <p>{errors.firstName?.message}</p>
-        <input
+
+        <p>{errors.prenom?.message}</p>
+        <TextField
+          id="outlined-basic"
+          label="Nom"
+          variant="outlined"
           type="text"
-          {...register('lastName', {
+          error={!!errors.nom}
+          {...register('nom', {
             required: 'Champ requis',
             minLength: {
               value: 2,
-              message: '2 caractéres minimum',
+              message: 'Minimum 2 caractères',
             },
             maxLength: {
               value: 20,
-              message: '20 caractéres maximum',
+              message: 'Maximum 20 caractères',
             },
-            pattern: /^[A-Za-z]+$/i,
+            pattern: {
+              value: /^[A-Za-z]+$/i,
+              message: 'Seulement des lettres',
+            },
           })}
           placeholder="Last Name"
         />
-        <p>{errors.lastName?.message}</p>
-        <input
+        <p>{errors.nom?.message}</p>
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
           type="email"
+          error={!!errors.email}
           {...register('email', {
             required: 'Champ requis',
             pattern: {
@@ -67,7 +114,10 @@ function Form() {
           placeholder="Email"
         />
         <p>{errors.email?.message}</p>
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Tel."
+          variant="outlined"
           type="Tel"
           {...register('phone', {
             pattern: {
@@ -79,26 +129,44 @@ function Form() {
         />
         <p>{errors.phone?.message}</p>
 
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Message"
+          type="text"
+          variant="outlined"
+          error={!!errors.message}
           {...register('message', {
             required: 'Champ requis',
             minLength: {
               value: 10,
-              message: '10 caractéres minimum',
+              message: 'Minimum 10 caractères',
             },
             maxLength: {
               value: 1500,
-              message: '1500 caractéres maximum',
+              message: 'Maximum 1500 caractères',
             },
           })}
           placeholder="Message"
         />
         <p>{errors.message?.message}</p>
 
-        <input type="submit" />
+        <TextField type="submit" />
       </form>
     </div>
   );
 }
 
 export default Form;
+
+Form.propTypes = {
+  comments: propTypes.arrayOf(
+    propTypes.shape({
+      _id: propTypes.string.isRequired,
+      prenom: propTypes.string.isRequired,
+      nom: propTypes.string.isRequired,
+      message: propTypes.string.isRequired,
+      email: propTypes.string.isRequired,
+    }),
+  ).isRequired,
+  setComments: propTypes.func.isRequired,
+};
