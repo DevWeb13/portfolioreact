@@ -15,8 +15,15 @@ function Comments({ comments }) {
             {'  '}
             le {comment.date.slice(0, 10)} à {comment.date.slice(11)}
           </p>
-          <p className="commentEMail">
-            {comment.email} {comment.tel}
+          <a
+            href={`mailto:${comment.email}`}
+            className="commentEmail"
+            target="blank"
+          >
+            {comment.email}
+          </a>
+          <p className="commentTel">
+            {comment.tel === 'XX XX XX XX XX' ? '' : comment.tel}
           </p>
           <p className="commentMessage">{comment.message}</p>
         </div>

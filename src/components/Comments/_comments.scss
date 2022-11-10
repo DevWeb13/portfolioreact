@@ -7,11 +7,11 @@
   .comment {
     display: flex;
     flex-direction: column;
-    gap: calc(0.1rem + 0.5vw);
+    gap: calc(0.1rem + 0.1vw);
     width: 100%;
     border: 2px solid $colorPrimary;
     border-radius: 10px;
-    padding: calc(5px + 0.25vw);
+    padding: calc(0.1rem + 0.1vw) calc(0.5rem + 0.5vw);
     .commentTitle {
       font-family: 'PT Sans', sans-serif;
       font-size: calc(0.6rem + 0.5vw);
@@ -19,6 +19,17 @@
       span {
         color: $colorPrimary;
         font-size: calc(1rem + 0.5vw);
+      }
+    }
+    .commentEmail {
+      color: $colorPrimaryLighten;
+      font-size: calc(0.5rem + 0.5vw);
+      // police pour email
+      font-family: 'Imprima', sans-serif;
+      text-decoration: underline;
+      &:hover {
+        color: $colorPrimaryDarken;
+        transform: scale(1);
       }
     }
     .commentMessage {
