@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Form from '../../components/Form/Form';
 import Comments from '../../components/Comments/Comments';
+import ConstructionLogo from '../../components/ConstructionLogo/ConstructionLogo';
 import { getCommentsList } from '../../services/commentsManager';
 
 function Contact() {
@@ -10,7 +11,7 @@ function Contact() {
 
   async function getData() {
     const data = await getCommentsList(comments);
-    setComments(data);
+    setComments(data.reverse());
     setLoader(false);
   }
 
@@ -18,10 +19,19 @@ function Contact() {
     getData();
   }, []);
   return (
-    <div className="contactContainer">
-      <Form comments={comments} setComments={setComments} />
-      <Comments comments={comments} />
-    </div>
+    <>
+      <h1>Contact</h1>
+      <main className="contactContainer">
+        <section className="formAndCommentsContainer">
+          <h2>Postez un commentaire ou envoyez un mail pour me contacter</h2>
+          <Form comments={comments} setComments={setComments} />
+          <Comments comments={comments} />
+        </section>
+        <section className="other">
+          <ConstructionLogo />
+        </section>
+      </main>
+    </>
   );
 }
 

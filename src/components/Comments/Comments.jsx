@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
 
 function Comments({ comments }) {
+  console.log(comments);
   return (
-    <div className="comments">
+    <div className="commentsContainer">
       {comments.map((comment) => (
         // eslint-disable-next-line no-underscore-dangle
         <div className="comment" key={comment._id}>
-          <p>
-            {comment.prenom} {comment.nom}
+          <p className="commentTitle">
+            <span>
+              {comment.prenom} {comment.nom}
+            </span>
+            {'  '}
+            le {comment.date.slice(0, 10)} à {comment.date.slice(11)}
           </p>
-          <p>{comment.email}</p>
-          <p>{comment.message}</p>
+          <p className="commentEMail">
+            {comment.email} {comment.tel}
+          </p>
+          <p className="commentMessage">{comment.message}</p>
         </div>
       ))}
     </div>
@@ -28,6 +35,8 @@ Comments.propTypes = {
       nom: propTypes.string.isRequired,
       message: propTypes.string.isRequired,
       email: propTypes.string.isRequired,
+      tel: propTypes.string.isRequired,
+      ip: propTypes.objectOf(propTypes.string).isRequired,
     }),
   ).isRequired,
 };

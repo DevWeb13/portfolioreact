@@ -30,21 +30,24 @@ function Form({ comments, setComments }) {
       date: new Date().toLocaleString(),
       ip,
     };
-
+    if (!newComment.tel) {
+      newComment.tel = 'XX XX XX XX XX';
+    }
+    console.log({ newComment });
     await postComment(newComment, comments);
     const newList = await getCommentsList(comments);
-    setComments(newList);
+    setComments(newList.reverse());
     reset();
   }
   console.log(new Date().toLocaleString());
   console.log(errors);
-  /* console.log(register); */
+  // console.log(register);
   return (
     <div className="formContainer">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <TextField
           id="outlined-basic"
-          label="Prénom"
+          label="Prénom*"
           variant="outlined"
           type="text"
           error={!!errors.prenom}
@@ -65,6 +68,7 @@ function Form({ comments, setComments }) {
           })}
           placeholder="Prénom"
           size="small"
+          fullWidth
         />
         {errors.prenom ? (
           <p className="error">{errors.prenom.message}</p>
@@ -74,7 +78,7 @@ function Form({ comments, setComments }) {
 
         <TextField
           id="outlined-basic"
-          label="Nom"
+          label="Nom*"
           variant="outlined"
           type="text"
           error={!!errors.nom}
@@ -95,6 +99,7 @@ function Form({ comments, setComments }) {
           })}
           placeholder="Nom"
           size="small"
+          fullWidth
         />
         {errors.nom ? (
           <p className="error">{errors.nom.message}</p>
@@ -103,7 +108,7 @@ function Form({ comments, setComments }) {
         )}
         <TextField
           id="outlined-basic"
-          label="Email"
+          label="Email*"
           variant="outlined"
           type="email"
           error={!!errors.email}
@@ -116,34 +121,37 @@ function Form({ comments, setComments }) {
           })}
           placeholder="Email"
           size="small"
+          fullWidth
         />
         {errors.email ? (
           <p className="error">{errors.email.message}</p>
         ) : (
           <p className="error" />
         )}
+
         <TextField
           id="outlined-basic"
-          label="Tel."
+          label="Tel"
           variant="outlined"
           type="tel"
-          {...register('phone', {
+          {...register('tel', {
             pattern: {
               message: 'Numéro invalide',
-              value: /^[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}$/i,
+              value: /^[0-9]{10}$/i,
             },
           })}
-          placeholder="XX XX XX XX XX"
+          placeholder="XXXXXXXXXX"
           size="small"
+          fullWidth
         />
-        {errors.phone ? (
-          <p className="error">{errors.phone.message}</p>
+        {errors.tel ? (
+          <p className="error">{errors.tel.message}</p>
         ) : (
           <p className="error" />
         )}
         <TextField
           id="outlined-basic"
-          label="Message"
+          label="Message*"
           type="text"
           variant="outlined"
           error={!!errors.message}
@@ -159,9 +167,9 @@ function Form({ comments, setComments }) {
             },
           })}
           placeholder="Message"
-          // champ de texte multi-lignes
           multiline
           size="small"
+          fullWidth
         />
         {errors.message ? (
           <p className="error">{errors.message.message}</p>
@@ -170,6 +178,7 @@ function Form({ comments, setComments }) {
         )}
 
         <TextField type="submit" size="small" className="submit" />
+        <p>* required</p>
       </form>
     </div>
   );
@@ -185,6 +194,8 @@ Form.propTypes = {
       nom: propTypes.string.isRequired,
       message: propTypes.string.isRequired,
       email: propTypes.string.isRequired,
+      tel: propTypes.string.isRequired,
+      ip: propTypes.objectOf(propTypes.string).isRequired,
     }),
   ).isRequired,
   setComments: propTypes.func.isRequired,
