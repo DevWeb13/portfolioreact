@@ -41,7 +41,6 @@ function Home() {
           <span>acquérir les compétences</span> clés de la profession de
           développeur.
         </p>
-
         <LogoLinks />
       </div>
     </div>

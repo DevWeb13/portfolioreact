@@ -18,7 +18,6 @@ function Projets() {
     },
   ]);
   const [loader, setLoader] = useState(true);
-  const [folder, setFolder] = useState([]);
 
   async function getData() {
     const data = await getProjectsList();

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100vh - $headerHeightSmall);
+  height: calc(100vh - $headerHeightMedium - $gap);
   color: $colorPrimaryDarken;
   flex: 1;
   text-align: center;

@@ -1,0 +1,151 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  gap: 1rem;
+  max-width: 400px;
+  border: 1px solid $colorSecondary;
+  padding: calc(0.75rem + 0.75vw);
+  h2 {
+    font-family: 'PT Sans', sans-serif;
+    color: $colorPrimary;
+    font-size: calc(0.75rem + 1vw);
+    text-align: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .MuiTextField-root {
+      .MuiInputLabel-root {
+        font-family: 'PT Sans', sans-serif;
+        color: $colorSecondary;
+        font-size: calc(0.6rem + 0.6vw);
+        z-index: 0;
+      }
+      .Mui-focused {
+        color: $colorPrimary;
+      }
+      .MuiInputBase-root {
+        font-family: 'PT Sans', sans-serif;
+        color: $colorDark;
+        font-size: calc(0.7rem + 0.7vw);
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+      }
+      .Mui-error {
+        .MuiOutlinedInput-notchedOutline {
+          border-color: #d32f2f;
+        }
+      }
+    }
+    .submitsContainer {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      .submit {
+        .MuiInputBase-root {
+          .MuiInputBase-input {
+            display: flex;
+            &:hover {
+              color: $colorPrimary;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.error {
+  color: #d32f2f;
+  font-size: calc(0.5rem + 0.5vw);
+  min-height: calc(0.75rem + 0.75vw);
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Modal */
+.modalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  gap: calc(2rem + 2vw);
+  h2 {
+    color: $colorPrimary;
+    font-size: calc(1rem + 1.25vw);
+  }
+  .MuiInputBase-root {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+    .MuiInputBase-input {
+      display: flex;
+      font-size: calc(1rem + 1vw);
+      font-family: 'PT Sans', sans-serif;
+      &:hover {
+        color: $colorPrimary;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.dark {
+  .formContainer {
+    .form {
+      .MuiTextField-root {
+        .MuiInputLabel-root {
+          color: #c8c8c8;
+        }
+        .Mui-focused {
+          color: $colorDarkSecondary;
+        }
+        .MuiInputBase-root {
+          color: $colorLight;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+          }
+        }
+        .Mui-error {
+          .MuiOutlinedInput-notchedOutline {
+            border-color: #d32f2f;
+          }
+        }
+      }
+      .submit {
+        .MuiInputBase-root {
+          .MuiInputBase-input {
+            &:hover {
+              color: $colorDarkSecondary;
+              cursor: pointer;
+              background-color: rgba(255, 255, 255, 0.04);
+            }
+          }
+        }
+      }
+    }
+    .MuiTextField-root {
+      .MuiInputBase-root {
+        .MuiOutlinedInput-notchedOutline {
+          border-color: #c8c8c8;
+          &:hover {
+            border-color: $colorLight;
+          }
+        }
+      }
+      .Mui-focused {
+        .MuiOutlinedInput-notchedOutline {
+          border-color: $colorDarkSecondary;
+        }
+      }
+    }
+  }
+}
