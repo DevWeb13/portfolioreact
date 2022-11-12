@@ -3,25 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  .formAndCommentsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    gap: 1rem;
-    max-width: 400px;
-    h2 {
-      font-family: 'PT Sans', sans-serif;
-      color: $colorPrimary;
-      font-size: calc(0.75rem + 1vw);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .formContainer {
-      width: 100%;
-    }
-  }
+  // gap: 1rem;
+
   .other {
     width: 100%;
   }
@@ -31,12 +14,11 @@
   .contactContainer {
     flex-direction: row;
     justify-content: space-around;
-
-    .formAndCommentsContainer {
-      width: 35%;
+    .formContainer {
+      width: 30%;
     }
     .other {
-      width: 60%;
+      width: 40%;
     }
   }
 }

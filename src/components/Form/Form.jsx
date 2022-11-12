@@ -2,12 +2,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import propTypes from 'prop-types';
 import { TextField } from '@mui/material';
-import { getCommentsList, postComment } from '../../services/commentsManager';
+import ReactModal from 'react-modal';
+import postEmail from '../../services/emailManager';
 import getIpAdress from '../../services/getIpAdress';
+import Loading from '../Loading/Loading';
 
-function Form({ comments, setComments }) {
+ReactModal.setAppElement('#root');
+
+function Form() {
+  const [loader, setLoader] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
   const {
     register,
     handleSubmit,
@@ -16,15 +22,17 @@ function Form({ comments, setComments }) {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log({ data });
+    setLoader(true);
     const ip = await getIpAdress();
     if (!ip) {
       // eslint-disable-next-line no-alert
       alert(
         "Error: Votre navigateur empéche l'envoi du commentaire. Veuillez essayer de désactiver votre bloqueur de publicité",
       );
+      setLoader(false);
       return;
     }
+
     const newComment = {
       ...data,
       date: new Date().toLocaleString(),
@@ -33,17 +41,37 @@ function Form({ comments, setComments }) {
     if (!newComment.tel) {
       newComment.tel = 'XX XX XX XX XX';
     }
-    console.log({ newComment });
-    await postComment(newComment, comments);
-    const newList = await getCommentsList(comments);
-    setComments(newList.reverse());
+    postEmail(newComment);
     reset();
+    setIsOpen(true);
+    setLoader(false);
   }
-  console.log(new Date().toLocaleString());
-  console.log(errors);
-  // console.log(register);
-  return (
-    <div className="formContainer">
+
+  return loader ? (
+    <Loading />
+  ) : (
+    <section className="formContainer">
+      <ReactModal isOpen={modalIsOpen} contentLabel="Modal">
+        <div className="modalContainer">
+          <h2>
+            Votre message a bien été envoyé.
+            <br />
+            <br />
+            Une réponse vous sera envoyée dans les plus brefs délais.
+            <br />
+            <br />
+            Merci.
+          </h2>
+          <TextField
+            type="button"
+            size="small"
+            className="submit"
+            value="🔙 retour"
+            onClick={() => setIsOpen(false)}
+          />
+        </div>
+      </ReactModal>
+      <h2>Envoyez moi un E-Mail 📝</h2>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <TextField
           id="outlined-basic"
@@ -176,27 +204,17 @@ function Form({ comments, setComments }) {
         ) : (
           <p className="error" />
         )}
-
-        <TextField type="submit" size="small" className="submit" />
-        <p>* required</p>
+        <div className="submitsContainer">
+          <TextField
+            type="submit"
+            size="small"
+            className="submit"
+            value="Envoyer  📨"
+          />
+        </div>
       </form>
-    </div>
+    </section>
   );
 }
 
 export default Form;
-
-Form.propTypes = {
-  comments: propTypes.arrayOf(
-    propTypes.shape({
-      _id: propTypes.string.isRequired,
-      prenom: propTypes.string.isRequired,
-      nom: propTypes.string.isRequired,
-      message: propTypes.string.isRequired,
-      email: propTypes.string.isRequired,
-      tel: propTypes.string.isRequired,
-      ip: propTypes.objectOf(propTypes.string).isRequired,
-    }),
-  ).isRequired,
-  setComments: propTypes.func.isRequired,
-};
