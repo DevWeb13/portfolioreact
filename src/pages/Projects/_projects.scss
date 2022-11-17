@@ -1,0 +1,22 @@
+.Projects {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.projectsContainer {
+  color: $colorPrimaryLighten;
+  padding: $gap $gapSmall;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: $gap $gapSmall;
+  letter-spacing: 0.1rem;
+}
+
+.dark {
+  .displayProjects {
+    color: $colorDarkSecondary;
+  }
+}

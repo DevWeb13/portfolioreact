@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
 
-const Header = lazy(() => import('./components/Header/Header'));
 const Home = lazy(() => import('./pages/Home/Home'));
 const Projets = lazy(() => import('./pages/Projects/Projects'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <React.StrictMode>
         <BrowserRouter>
+          <Header />
           <Suspense fallback={<Loading />}>
-            <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projets" element={<Projets />} />

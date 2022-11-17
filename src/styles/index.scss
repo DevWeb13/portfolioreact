@@ -2,11 +2,12 @@
 @import './settings';
 @import '../pages/Home/home';
 @import '../pages/Contact/contact';
+@import '../pages/Projects/projects';
 @import '../components/Header/header';
 @import '../components/ToggleTheme/toggleTheme';
 @import '../components/ConstructionLogo/constructionLogo';
 @import '../components/LogoLinks/logoLinks';
-@import '../components/DisplayProjects/displayProjects';
 @import '../components/Loading/loading';
 @import '../components/ToggleButtonMUI/toggleButtonMUI';
 @import '../components/Form/form';
+@import '../components/ProjectCard/projectCard';
