@@ -5,13 +5,14 @@ const Header = lazy(() => import('./components/Header/Header'));
 const Home = lazy(() => import('./pages/Home/Home'));
 const Projets = lazy(() => import('./pages/Projects/Projects'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
+const Loading = lazy(() => import('./components/Loading/Loading'));
 
 function App() {
   return (
     <div className="App">
       <React.StrictMode>
         <BrowserRouter>
-          <Suspense fallback={<div>Chargement...</div>}>
+          <Suspense fallback={<Loading />}>
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />

@@ -6,7 +6,7 @@ import DisplayProjects from '../../components/DisplayProjects/DisplayProjects';
 function Projets() {
   const [projects, setProjects] = useState([
     {
-      _id: null,
+      _id: '',
       logo: '',
       name: '',
       description: '',
@@ -15,6 +15,7 @@ function Projets() {
       technologies: [],
       gitHub: '',
       catégorie: '',
+      date: '',
     },
   ]);
   const [loader, setLoader] = useState(true);
