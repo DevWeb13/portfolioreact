@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import getProjectsList from '../../services/dataManager';
-import Loading from '../../components/Loading/Loading';
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ToggleButtonMUI from '../../components/ToggleButtonMUI/ToggleButtonMUI';
 import sortProjects from '../../services/sortProjects';
+
+const ProjectCard = lazy(() =>
+  import('../../components/ProjectCard/ProjectCard'),
+);
+const Loading = lazy(() => import('../../components/Loading/Loading'));
 
 function Projets() {
   const [projects, setProjects] = useState([
@@ -42,8 +45,12 @@ function Projets() {
       ) : (
         <div className="projectsContainer">
           {sortProjects(projects, alignment).map((project) => {
-            // eslint-disable-next-line no-underscore-dangle
-            return <ProjectCard key={project._id} project={project} />;
+            return (
+              // eslint-disable-next-line no-underscore-dangle
+              <Suspense key={project._id} fallback={<Loading />}>
+                <ProjectCard project={project} />
+              </Suspense>
+            );
           })}
         </div>
       )}

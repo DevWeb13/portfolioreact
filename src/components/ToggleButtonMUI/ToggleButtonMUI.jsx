@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 
 const ToggleButtonGroup = lazy(() => import('@mui/material/ToggleButtonGroup'));
 const ToggleButton = lazy(() => import('@mui/material/ToggleButton'));
+const Loading = lazy(() => import('../Loading/Loading'));
 
 function ToggleButtonMUI({ alignment, setAlignment }) {
   const handleChange = (_event, newAlignment) => {
@@ -10,7 +11,7 @@ function ToggleButtonMUI({ alignment, setAlignment }) {
   };
   return (
     <div className="toggleButtonGroupContainer">
-      <Suspense fallback={<div>Chargement...</div>}>
+      <Suspense fallback={<Loading />}>
         <ToggleButtonGroup
           value={alignment}
           exclusive
