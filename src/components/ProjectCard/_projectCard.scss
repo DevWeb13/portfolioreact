@@ -21,10 +21,8 @@
     color: $colorSecondaryDarken;
     width: inherit;
     height: 220px;
-
     background: white;
     border-radius: 3px;
-    border: 0.2rem solid $colorPrimaryLighten;
   }
   > .front {
     transform: rotateY(0deg);
@@ -109,7 +107,6 @@
     .back {
       background: $colorLight;
       color: $colorDark;
-      border: 0.2rem solid $colorDarkSecondaryDarken;
     }
     .front {
       box-shadow: 5px 5px 5px 0 $colorDarkSecondary;
@@ -119,7 +116,6 @@
     }
     .description {
       color: $colorDarkSecondaryDarken;
-      // text-shadow: 0px 5px 7px $colorDarkSecondary;
     }
     button {
       background: $colorDarkSecondary;

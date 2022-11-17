@@ -1,9 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import propTypes from 'prop-types';
-
-const ToggleButtonGroup = lazy(() => import('@mui/material/ToggleButtonGroup'));
-const ToggleButton = lazy(() => import('@mui/material/ToggleButton'));
-const Loading = lazy(() => import('../Loading/Loading'));
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButton from '@mui/material/ToggleButton';
 
 function ToggleButtonMUI({ alignment, setAlignment }) {
   const handleChange = (_event, newAlignment) => {
@@ -11,42 +9,40 @@ function ToggleButtonMUI({ alignment, setAlignment }) {
   };
   return (
     <div className="toggleButtonGroupContainer">
-      <Suspense fallback={<Loading />}>
-        <ToggleButtonGroup
-          value={alignment}
-          exclusive
-          onChange={handleChange}
-          aria-label="Platform"
-          className="toggleButtonGroup"
+      <ToggleButtonGroup
+        value={alignment}
+        exclusive
+        onChange={handleChange}
+        aria-label="Platform"
+        className="toggleButtonGroup"
+      >
+        <ToggleButton
+          className={
+            alignment === 'Tous' ? 'toggleButton active' : 'toggleButton'
+          }
+          value="Tous"
         >
-          <ToggleButton
-            className={
-              alignment === 'Tous' ? 'toggleButton active' : 'toggleButton'
-            }
-            value="Tous"
-          >
-            Tous
-          </ToggleButton>
-          <ToggleButton
-            className={
-              alignment === 'OpenClassrooms'
-                ? 'toggleButton active'
-                : 'toggleButton'
-            }
-            value="OpenClassrooms"
-          >
-            Openclassrooms
-          </ToggleButton>
-          <ToggleButton
-            className={
-              alignment === 'Personnel' ? 'toggleButton active' : 'toggleButton'
-            }
-            value="Personnel"
-          >
-            Personnel
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Suspense>
+          Tous
+        </ToggleButton>
+        <ToggleButton
+          className={
+            alignment === 'OpenClassrooms'
+              ? 'toggleButton active'
+              : 'toggleButton'
+          }
+          value="OpenClassrooms"
+        >
+          Openclassrooms
+        </ToggleButton>
+        <ToggleButton
+          className={
+            alignment === 'Personnel' ? 'toggleButton active' : 'toggleButton'
+          }
+          value="Personnel"
+        >
+          Personnel
+        </ToggleButton>
+      </ToggleButtonGroup>
     </div>
   );
 }

@@ -44,14 +44,14 @@ function Projets() {
         <Loading />
       ) : (
         <div className="projectsContainer">
-          {sortProjects(projects, alignment).map((project) => {
-            return (
-              // eslint-disable-next-line no-underscore-dangle
-              <Suspense key={project._id} fallback={<Loading />}>
-                <ProjectCard project={project} />
-              </Suspense>
-            );
-          })}
+          <Suspense fallback={<Loading />}>
+            {sortProjects(projects, alignment).map((project) => {
+              return (
+                // eslint-disable-next-line no-underscore-dangle
+                <ProjectCard project={project} key={project._id} />
+              );
+            })}
+          </Suspense>
         </div>
       )}
     </div>

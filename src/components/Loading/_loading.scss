@@ -20,6 +20,20 @@
   animation: rotate linear 3.5s infinite;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  h1 {
+    display: block;
+    color: $colorPrimary;
+    font-size: calc(1rem + 1vw);
+  }
+}
+
 .loader {
   position: relative;
   margin: 75px auto;
@@ -61,6 +75,11 @@ div:hover {
 }
 
 .dark {
+  .loading {
+    h1 {
+      color: $colorDarkSecondary;
+    }
+  }
   .loader {
     animation: rotateDark 4s infinite linear;
     div {

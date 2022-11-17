@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: calc(100vh - $headerHeightXSmall - $gap);
+  @include medium {
+    min-height: calc(100vh - $headerHeightMedium - $gap);
+  }
 }
 
 .projectsContainer {
