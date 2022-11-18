@@ -1,12 +1,10 @@
-import React, { useEffect, useState, Suspense, lazy } from 'react';
+/* eslint-disable no-underscore-dangle */
+import React, { useEffect, useState } from 'react';
 import getProjectsList from '../../services/dataManager';
 import ToggleButtonMUI from '../../components/ToggleButtonMUI/ToggleButtonMUI';
 import sortProjects from '../../services/sortProjects';
-
-const ProjectCard = lazy(() =>
-  import('../../components/ProjectCard/ProjectCard'),
-);
-const Loading = lazy(() => import('../../components/Loading/Loading'));
+import Loading from '../../components/Loading/Loading';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 function Projets() {
   const [projects, setProjects] = useState([
@@ -36,22 +34,40 @@ function Projets() {
     getData();
   }, []);
 
+  useEffect(() => {
+    const cards = document.querySelectorAll('.flip');
+    cards.forEach((card) => {
+      if (card.classList.contains('visible')) {
+        card.classList.remove('visible');
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        }
+      },
+      { threshold: 0.5 },
+    );
+    cards.forEach((project) => {
+      observer.observe(project);
+    });
+  }, [sortProjects(projects, alignment)]);
+
   return (
-    <div className="Projects">
+    <div className="projects">
       <h1>Mes projets</h1>
       <ToggleButtonMUI alignment={alignment} setAlignment={setAlignment} />
       {loader ? (
         <Loading />
       ) : (
         <div className="projectsContainer">
-          <Suspense fallback={<Loading />}>
-            {sortProjects(projects, alignment).map((project) => {
-              return (
-                // eslint-disable-next-line no-underscore-dangle
-                <ProjectCard project={project} key={project._id} />
-              );
-            })}
-          </Suspense>
+          {sortProjects(projects, alignment).map((project) => {
+            return <ProjectCard project={project} key={project._id} />;
+          })}
         </div>
       )}
     </div>

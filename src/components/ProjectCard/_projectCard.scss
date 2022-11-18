@@ -1,5 +1,8 @@
 // base
 .flip {
+  opacity: 0;
+  transform: scale3d(0, 0, 0) rotate(90deg);
+  perspective: 750px;
   max-width: 90vw;
   position: relative;
   width: 400px;
@@ -99,6 +102,11 @@
       transform: rotateY(0deg);
     }
   }
+}
+.visible {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transition: all 0.5s ease-in-out;
 }
 
 .dark {
