@@ -28,13 +28,25 @@ function Projets() {
     const data = await getProjectsList();
     setProjects(data);
     setLoader(false);
+    // save data to localstorage if not already there
+    if (!localStorage.getItem('projects')) {
+      localStorage.setItem('projects', JSON.stringify(data));
+    }
   }
 
   useEffect(() => {
-    getData();
+    // si les données sont déjà dans le local storage, on les récupère
+    if (localStorage.getItem('projects')) {
+      const data = JSON.parse(localStorage.getItem('projects') || '{}');
+      setProjects(data);
+      setLoader(false);
+    } else {
+      getData();
+    }
   }, []);
 
   useEffect(() => {
+    console.log('test');
     const cards = document.querySelectorAll('.flip');
     cards.forEach((card) => {
       if (card.classList.contains('visible')) {
@@ -55,7 +67,7 @@ function Projets() {
     cards.forEach((project) => {
       observer.observe(project);
     });
-  }, [sortProjects(projects, alignment)]);
+  }, [projects, alignment]);
 
   return (
     <div className="projects">
