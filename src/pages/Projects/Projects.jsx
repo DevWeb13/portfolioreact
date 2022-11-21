@@ -36,8 +36,9 @@ function Projets() {
 
   useEffect(() => {
     // si les données sont déjà dans le local storage, on les récupère
-    if (localStorage.getItem('projects')) {
-      const data = JSON.parse(localStorage.getItem('projects') || '{}');
+    const isProjectsInLocalStorage = localStorage.getItem('projects');
+    if (isProjectsInLocalStorage && isProjectsInLocalStorage !== undefined) {
+      const data = JSON.parse(isProjectsInLocalStorage);
       setProjects(data);
       setLoader(false);
     } else {
