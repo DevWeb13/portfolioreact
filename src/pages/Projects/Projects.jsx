@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useQuery } from 'react-query';
 import getProjectsList from '../../services/dataManager';
 import ToggleButtonMUI from '../../components/ToggleButtonMUI/ToggleButtonMUI';
 import sortProjects from '../../services/sortProjects';
@@ -7,47 +8,16 @@ import Loading from '../../components/Loading/Loading';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 function Projets() {
-  const [projects, setProjects] = useState([
-    {
-      _id: '',
-      logo: '',
-      name: '',
-      description: '',
-      image: '',
-      link: '',
-      technologies: [],
-      gitHub: '',
-      catégorie: '',
-      date: '',
-    },
-  ]);
-  const [loader, setLoader] = useState(true);
   const [alignment, setAlignment] = React.useState('Tous');
-
-  // savoir si on est en prod ou en dev
-  const isDev = process.env.NODE_ENV === 'development';
-
-  async function getData() {
-    const data = await getProjectsList(isDev);
-    setProjects(data);
-    setLoader(false);
-    // save data to localstorage if not already there
-    if (!localStorage.getItem('projects')) {
-      localStorage.setItem('projects', JSON.stringify(data));
-    }
-  }
-
-  useEffect(() => {
-    // si les données sont déjà dans le local storage, on les récupère
-    const isProjectsInLocalStorage = localStorage.getItem('projects');
-    if (isProjectsInLocalStorage && isProjectsInLocalStorage !== undefined) {
-      const data = JSON.parse(isProjectsInLocalStorage);
-      setProjects(data);
-      setLoader(false);
-    } else {
-      getData();
-    }
-  }, []);
+  const queryKey = ['projects'];
+  const { isLoading, data, error } = useQuery(
+    queryKey,
+    () => getProjectsList(),
+    {
+      staleTime: 1000 * 60 * 60 * 24,
+    },
+  );
+  const projects = data || [];
 
   useEffect(() => {
     console.log('test');
@@ -77,7 +47,7 @@ function Projets() {
     <div className="projects">
       <h1>Mes projets</h1>
       <ToggleButtonMUI alignment={alignment} setAlignment={setAlignment} />
-      {loader ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <div className="projectsContainer">
