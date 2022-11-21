@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 import getProjectsList from '../../services/dataManager';
 import ToggleButtonMUI from '../../components/ToggleButtonMUI/ToggleButtonMUI';
 import sortProjects from '../../services/sortProjects';
@@ -9,8 +9,10 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 function Projets() {
   const [alignment, setAlignment] = React.useState('Tous');
-  // recup de isDev
-  const { data: isDev } = useQuery('isDev');
+
+  const queryClient = useQueryClient();
+  const isDev = queryClient.getQueryData('isDev');
+
   const queryKey = ['projects'];
   const { isLoading, data } = useQuery(queryKey, () => getProjectsList(isDev), {
     staleTime: 1000 * 60 * 60 * 24,
