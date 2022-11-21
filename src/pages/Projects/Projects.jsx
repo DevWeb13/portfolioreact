@@ -24,8 +24,11 @@ function Projets() {
   const [loader, setLoader] = useState(true);
   const [alignment, setAlignment] = React.useState('Tous');
 
+  // savoir si on est en prod ou en dev
+  const isDev = process.env.NODE_ENV === 'development';
+
   async function getData() {
-    const data = await getProjectsList();
+    const data = await getProjectsList(isDev);
     setProjects(data);
     setLoader(false);
     // save data to localstorage if not already there
