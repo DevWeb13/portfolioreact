@@ -9,18 +9,17 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 function Projets() {
   const [alignment, setAlignment] = React.useState('Tous');
+  // recup de isDev
+  const { data: isDev } = useQuery('isDev');
   const queryKey = ['projects'];
-  const { isLoading, data, error } = useQuery(
-    queryKey,
-    () => getProjectsList(),
-    {
-      staleTime: 1000 * 60 * 60 * 24,
-    },
-  );
+  const { isLoading, data } = useQuery(queryKey, () => getProjectsList(isDev), {
+    staleTime: 1000 * 60 * 60 * 24,
+    cacheTime: 1000 * 60 * 60 * 24,
+  });
+
   const projects = data || [];
 
   useEffect(() => {
-    console.log('test');
     const cards = document.querySelectorAll('.flip');
     cards.forEach((card) => {
       if (card.classList.contains('visible')) {

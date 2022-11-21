@@ -1,4 +1,5 @@
 export default async function getProjectsList(isDev) {
+  console.log(isDev);
   if (isDev) {
     try {
       const response = await fetch('http://localhost:5000/projects', {

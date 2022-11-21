@@ -1,4 +1,4 @@
-import htmlLogo from '../assets/html-5-svgrepo-com.svg';
+// import htmlLogo from '../assets/html-5-svgrepo-com.svg';
 import reactLogo from '../assets/react-svgrepo-com.svg';
 import jsLogo from '../assets/js-svgrepo-com.svg';
 import expressLogo from '../assets/express-svgrepo-com.svg';
@@ -18,7 +18,7 @@ import rechartsLogo from '../assets/recharts.png';
  */
 export default function displayLogo(technology) {
   if (technology === 'html') {
-    return htmlLogo;
+    return '../assets/html-5-svgrepo-com.svg';
   }
   if (technology === 'react') {
     return reactLogo;
