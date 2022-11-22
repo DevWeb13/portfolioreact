@@ -101,6 +101,7 @@ h1 {
 li {
   list-style-type: none;
 }
+
 a {
   font-family: 'PT Sans', sans-serif;
   text-decoration: none;
@@ -108,12 +109,12 @@ a {
   color: $colorSecondary;
   transition: all 0.3s;
   transform: scale(1);
+
   &:hover {
     transform: scale(1.1);
     color: $colorSecondaryDarken;
   }
 }
-
 button {
   cursor: pointer;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import displayLogo from '../../services/displayLogo';
 import displayProjectLogoOrName from '../../services/displayProjectLogoOrName';
+import ButtonLink from '../ButtonLink/ButtonLink';
 
 function ProjectCard({ project }) {
   return (
@@ -27,26 +28,8 @@ function ProjectCard({ project }) {
         </div>
 
         <div className="projectLinksContainer">
-          <button type="button">
-            <a
-              className="projectLink"
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit site
-            </a>
-          </button>
-          <button type="button">
-            <a
-              className="projectLink"
-              href={project.gitHub}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Dépot GitHub
-            </a>
-          </button>
+          <ButtonLink href={project.link} text="Visit site" />
+          <ButtonLink href={project.gitHub} text="Visit GitHub" />
         </div>
       </div>
     </div>
