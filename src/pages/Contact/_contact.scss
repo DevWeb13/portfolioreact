@@ -5,6 +5,18 @@
   justify-content: center;
   flex: 1;
   gap: 1rem;
+  .mailAndCV {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap;
+    .buttonLink {
+      width: 90%;
+      max-width: 400px;
+      font-size: calc(0.65rem + 1vw);
+      min-height: 50px;
+    }
+  }
 
   .other {
     width: 100%;
@@ -15,19 +27,6 @@
     gap: $gapSmall;
     height: 100%;
     justify-content: space-around;
-    .buttonLink {
-      width: 90%;
-      max-width: 400px;
-      font-size: calc(0.75rem + 1vw);
-      min-height: 50px;
-      // height: 100%;
-      .link {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
 }
 
@@ -35,11 +34,11 @@
   .contactContainer {
     flex-direction: row;
     justify-content: space-around;
-    .formContainer {
-      width: 30%;
+    .mailAndCV {
+      width: 40%;
     }
     .other {
-      width: 40%;
+      width: 45%;
     }
   }
 }

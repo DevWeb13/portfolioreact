@@ -62,8 +62,11 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 1440px;
   gap: $gap;
+  max-width: -webkit-fill-available;
+  @include medium() {
+    max-width: 1440px;
+  }
 }
 
 h1,
@@ -109,7 +112,6 @@ a {
   color: $colorSecondary;
   transition: all 0.3s;
   transform: scale(1);
-
   &:hover {
     transform: scale(1.1);
     color: $colorSecondaryDarken;
@@ -117,6 +119,7 @@ a {
 }
 button {
   cursor: pointer;
+  font-family: 'PT Sans', sans-serif;
 }
 
 // DARK MODE
