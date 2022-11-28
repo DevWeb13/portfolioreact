@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import jsLogo from '../../assets/js-svgrepo-com.svg';
 import reactLogo from '../../assets/react-svgrepo-com.svg';
 import sassLogo from '../../assets/sass-svgrepo-com.svg';
@@ -8,21 +8,22 @@ import expressLogo from '../../assets/express-svgrepo-com.svg';
 import vercelLogo from '../../assets/vercel-svgrepo-com.svg';
 
 function Boxes() {
-  const boxes = document.querySelectorAll('.box');
-  let current = 1;
+  useEffect(() => {
+    const boxes = document.querySelectorAll('.box');
+    let current = 1;
+    setInterval(() => {
+      boxes.forEach((box) => {
+        if (current > boxes.length) current = 1;
 
-  setInterval(() => {
-    boxes.forEach((box) => {
-      if (current > boxes.length) current = 1;
-
-      if (Number(box.classList[1].split('-')[1]) === current) {
-        box.classList.add('active');
-      } else {
-        box.classList.remove('active');
-      }
-    });
-    current++;
-  }, 5000);
+        if (Number(box.classList[1].split('-')[1]) === current) {
+          box.classList.add('active');
+        } else {
+          box.classList.remove('active');
+        }
+      });
+      current++;
+    }, 5000);
+  }, []);
 
   return (
     <div className="boxesContainer center">
