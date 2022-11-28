@@ -1,0 +1,197 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxesContainer {
+  display: none;
+}
+@include small {
+  .boxesContainer {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - $headerHeightXSmall - $gap);
+    background-color: rgba(127, 86, 167);
+    position: absolute;
+    background-color: transparent;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .boxes {
+    width: 100%;
+    height: 100%;
+    perspective: 150rem;
+    position: relative;
+    // font-size: 1rem;
+  }
+
+  .box {
+    transform-style: preserve-3d;
+    transform: rotateY(45deg) rotateX(30deg);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    cursor: pointer;
+  }
+  .active.box {
+    top: -250px;
+    left: -35%;
+    transition: all 1s;
+  }
+  // .active.box.adjustRight {
+  //   left: 2rem;
+  // }
+  // .active.box.adjustLeft {
+  //   left: -2rem;
+  // }
+
+  @keyframes boxAnim {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+  }
+
+  .box-1 {
+    left: -250rem;
+    top: -60rem;
+    animation: boxAnim 100s infinite linear;
+  }
+
+  .box-2 {
+    left: -110rem;
+    top: -230rem;
+    animation: boxAnim 100s -10s infinite linear;
+  }
+
+  .box-3 {
+    left: 100rem;
+    top: -230rem;
+    animation: boxAnim 100s -20s infinite linear;
+  }
+
+  .box-4 {
+    left: 250rem;
+    top: -60rem;
+    animation: boxAnim 100s -30s infinite linear;
+  }
+
+  .box-5 {
+    left: 220rem;
+    top: 130rem;
+    animation: boxAnim 100s -40s infinite linear;
+  }
+
+  .box-6 {
+    left: 0;
+    top: 250rem;
+    animation: boxAnim 100s -50s infinite linear;
+  }
+
+  .box-7 {
+    left: -210rem;
+    top: 140rem;
+    animation: boxAnim 100s -60s infinite linear;
+  }
+
+  .box div {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    opacity: 0.8;
+    box-shadow: 0.1rem 0.1rem 0.1rem $colorPrimary inset,
+      -0.1rem -0.1rem 0.1rem $colorPrimary inset,
+      0.1rem 0.1rem 3.5rem rgba(0, 0, 0, 0.2),
+      -0.1rem -0.1rem 3.5rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $colorLight;
+    img {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+    }
+  }
+
+  .top-side {
+    transform: rotateX(90deg) translateZ(2.5rem);
+  }
+
+  .bottom-side {
+    transform: rotateX(90deg) translateZ(-2.5rem);
+    img {
+      transform: scaleX(-1);
+    }
+  }
+
+  .front-side {
+    transform: translateZ(2.5rem);
+  }
+
+  .back-side {
+    transform: translateZ(-2.5rem);
+  }
+
+  .right-side {
+    transform: rotateY(-90deg) translateX(2.5rem);
+    transform-origin: right;
+    img {
+      transform: scaleX(-1);
+    }
+  }
+
+  .left-side {
+    transform: rotateY(90deg) translateX(-2.5rem);
+    transform-origin: left;
+  }
+
+  .active.box div {
+    width: 8rem;
+    height: 8rem;
+    transition: all 0.2s 0.5s ease-in-out;
+    position: absolute;
+  }
+
+  .active .top-side {
+    transform: rotateX(90deg) translateZ(4rem);
+  }
+
+  .active .bottom-side {
+    transform: rotateX(90deg) translateZ(-4rem);
+  }
+
+  .active .front-side {
+    transform: translateZ(4rem);
+  }
+
+  .active .back-side {
+    transform: translateZ(-4rem);
+  }
+
+  .active .right-side {
+    transform: rotateY(-90deg) translateX(4rem);
+    transform-origin: right;
+  }
+
+  .active .left-side {
+    transform: rotateY(90deg) translateX(-4rem);
+    transform-origin: left;
+  }
+
+  .dark {
+    .box div {
+      box-shadow: 0.1rem 0.1rem 0.1rem $colorDarkSecondary inset,
+        -0.1rem -0.1rem 0.1rem $colorDarkSecondary inset,
+        0.1rem 0.1rem 3.5rem rgba(255, 255, 255, 0.2),
+        -0.1rem -0.1rem 3.5rem rgba(255, 255, 255, 0.2);
+    }
+  }
+}

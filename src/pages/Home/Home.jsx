@@ -1,5 +1,6 @@
 import React from 'react';
 import LogoLinks from '../../components/LogoLinks/LogoLinks';
+import Boxes from '../../components/Boxes/Boxes';
 
 function Home() {
   return (
@@ -43,6 +44,7 @@ function Home() {
         </p>
         <LogoLinks />
       </div>
+      <Boxes />
     </div>
   );
 }
