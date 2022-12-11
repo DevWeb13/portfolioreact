@@ -17,7 +17,7 @@ function Home() {
           <span>Développeur front-end spécialisé React</span>.
         </p>
         <p>
-          Passionneé par le développement web, je développe des sites web en
+          Passionné par le développement web, je développe des sites web en
           autodidacte depuis <span>2019</span>.
           <br />
           Je suis à votre disposition pour réaliser vos projets.
