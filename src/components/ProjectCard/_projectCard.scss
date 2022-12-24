@@ -103,13 +103,13 @@
       color: $colorDark;
     }
     .front {
-      box-shadow: 5px 5px 5px 0 $colorDarkSecondary;
+      box-shadow: 5px 5px 5px 0 $colorDarkPrimary;
     }
     .name {
-      color: $colorDarkSecondary;
+      color: $colorDarkPrimary;
     }
     .description {
-      color: $colorDarkSecondaryDarken;
+      color: $colorDarkPrimaryDarken;
     }
   }
 }

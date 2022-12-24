@@ -48,7 +48,8 @@ $breakpoints: (
 body {
   background: $colorLight;
   color: $colorDark;
-  font-family: 'Imprima', sans-serif;
+  font-family: 'Yanone Kaffeesatz';
+
   //font-size: calc(0.5rem + 0.5vw);
 }
 
@@ -126,12 +127,12 @@ button {
 .dark {
   background: $colorDark;
   h1 {
-    color: $colorDarkSecondary;
+    color: $colorDarkPrimary;
   }
   a {
     color: lighten($colorSecondary, 20%);
     &:hover {
-      color: lighten($colorDarkSecondary, 20%);
+      color: lighten($colorDarkPrimary, 20%);
     }
   }
 }

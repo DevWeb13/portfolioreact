@@ -100,9 +100,9 @@
 
 .dark {
   .formContainer {
-    border-color: $colorDarkSecondary;
+    border-color: $colorDarkPrimary;
     h2 {
-      color: $colorDarkSecondary;
+      color: $colorDarkPrimary;
     }
     .form {
       .MuiTextField-root {
@@ -110,7 +110,7 @@
           color: #c8c8c8;
         }
         .Mui-focused {
-          color: $colorDarkSecondary;
+          color: $colorDarkPrimary;
         }
         .MuiInputBase-root {
           color: $colorLight;
@@ -128,7 +128,7 @@
         .MuiInputBase-root {
           .MuiInputBase-input {
             &:hover {
-              color: $colorDarkSecondary;
+              color: $colorDarkPrimary;
               cursor: pointer;
               background-color: rgba(255, 255, 255, 0.04);
             }
@@ -147,7 +147,7 @@
       }
       .Mui-focused {
         .MuiOutlinedInput-notchedOutline {
-          border-color: $colorDarkSecondary;
+          border-color: $colorDarkPrimary;
         }
       }
     }

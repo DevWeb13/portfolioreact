@@ -1,50 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LogoLinks from '../../components/LogoLinks/LogoLinks';
-import Boxes from '../../components/Boxes/Boxes';
+import APropos from '../../components/APropos/APropos';
 
 function Home() {
+  // Remettre scroll à 0 lors du rechargement de la page
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
-    <div className="home">
-      <div className="homeContainer">
-        <h1>Developpeur Javascript/React</h1>
-        <p>
-          <span>&quot;La Réponse Dev&quot;</span> vous souhaite la bienvenue.
-        </p>
-        <p>Bonjour à tous !! 👋</p>
-        <p>
-          Je suis <span>Loic</span>.
-          <br />
-          <span>Développeur front-end spécialisé React</span>.
-        </p>
-        <p>
-          Passionné par le développement web, je développe des sites web en
-          autodidacte depuis <span>2019</span>.
-          <br />
-          Je suis à votre disposition pour réaliser vos projets.
-        </p>
-        <p>
-          <span>Je vous invite à découvrir mes réalisations</span> et à me
-          contacter pour plus d&apos;informations.
-        </p>
-        <p>
-          J&apos;ai recemment obtenu mon diplome certifiée RNCP <br />
-          <span>Titre de niveau 6 (RNCP27099)</span>
-          <br />
-          <a href="https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react">
-            &quot;Développeur d&apos;application - JavaScript React&quot;
-          </a>
-        </p>
-        <p>
-          {' '}
-          En <span>apprentissage permanent</span>, cette formation m&apos;a
-          permis de
-          <span> renforcer mes acquis</span> et d&apos;
-          <span>acquérir les compétences</span> clés de la profession de
-          développeur.
-        </p>
+    <div id="home">
+      <section id="wrapperH1LogoLinks">
+        <h1>
+          <span className="titleAppears">Giuliano Loic</span>
+          <span className="titleAppears">Développeur web</span>
+        </h1>
         <LogoLinks />
-      </div>
-      <Boxes />
+      </section>
+      <APropos />
     </div>
   );
 }

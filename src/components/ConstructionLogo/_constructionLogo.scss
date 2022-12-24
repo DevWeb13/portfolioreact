@@ -321,12 +321,12 @@
 // DARK MODE
 .dark {
   .constructionContainer {
-    color: $colorDarkSecondary;
+    color: $colorDarkPrimary;
 
     .construction {
       transition: 5s linear;
 
-      color: $colorDarkSecondary;
+      color: $colorDarkPrimary;
       &:after {
         background-color: $colorDark;
         transition: 5s linear;

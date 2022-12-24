@@ -1,0 +1,105 @@
+.overlay {
+  background: rgb(238, 238, 238);
+  background: linear-gradient(
+    0deg,
+    rgba(238, 238, 238, 1) 75%,
+    rgba(238, 238, 238, 0.9) 80%,
+    rgba(238, 238, 238, 0.25) 95%,
+    rgba(238, 238, 238, 0) 100%
+  );
+  bottom: 50px;
+  height: 30px;
+  position: relative;
+  width: 100%;
+  @include small {
+    bottom: 60px;
+    height: 40px;
+  }
+  @include medium {
+    bottom: 70px;
+    height: 50px;
+  }
+  @include large {
+    bottom: 80px;
+    height: 60px;
+  }
+  @include xLarge {
+    bottom: 90px;
+    height: 70px;
+  }
+}
+
+@keyframes showText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.text {
+  animation-delay: 3s;
+  animation: showText 3s forwards ease-out;
+  display: flex;
+  font-size: 30px;
+  opacity: 0;
+  user-select: none;
+  @include small {
+    font-size: 40px;
+  }
+  @include medium {
+    font-size: 50px;
+  }
+  @include large {
+    font-size: 60px;
+  }
+  @include xLarge {
+    font-size: 70px;
+  }
+
+  .wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    .letter {
+      transform: translateY(40%);
+      transition: ease-out 0.5s;
+    }
+    .shadow {
+      color: $colorSecondary;
+      transform: scale(1, -1);
+      transition: ease-in 1s, ease-out 1s;
+    }
+    &:hover {
+      .letter {
+        transform: translateY(-50%);
+      }
+      .shadow {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+    }
+  }
+}
+
+// dark mode
+.dark {
+  .overlay {
+    background: rgb(51, 51, 51);
+    background: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 1) 75%,
+      rgba(51, 51, 51, 0.9) 80%,
+      rgba(51, 51, 51, 0.25) 95%,
+      rgba(51, 51, 51, 0) 100%
+    );
+  }
+  .text {
+    .wrapper {
+      .letter {
+        color: #09fbba;
+      }
+    }
+  }
+}

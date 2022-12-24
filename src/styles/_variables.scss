@@ -5,10 +5,12 @@ $colorPrimaryLighten: lighten($colorPrimary, 10%);
 
 $colorSecondary: #959595;
 $colorSecondaryDarken: darken($colorSecondary, 20%);
+
 $colorLight: #eee;
 $colorDark: #333;
-$colorDarkSecondary: #09fbba;
-$colorDarkSecondaryDarken: darken($colorDarkSecondary, 20%);
+
+$colorDarkPrimary: #09fbba;
+$colorDarkPrimaryDarken: darken($colorDarkPrimary, 20%);
 
 /******************* HEADER HEIGHT *******************/
 $headerHeightXSmall: 9.375rem;
