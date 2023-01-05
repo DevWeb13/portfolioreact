@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  * @param {object} props - props
  * @param {string} props.href - Link to the page
  * @param {string} props.text - Text to display
- * @param {{ icon: string[], iconName: import('@fortawesome/fontawesome-svg-core').IconName, prefix: import('@fortawesome/fontawesome-svg-core').IconPrefix }} props.iconFontAwesome - Icon to display
+ * @param {{ iconName: import('@fortawesome/fontawesome-svg-core').IconName, prefix: import('@fortawesome/fontawesome-svg-core').IconPrefix }} props.iconFontAwesome - Icon to display
  * @returns A button element with a className of buttonLink or buttonLinkWithIcon, depending on whether
  * or not the iconFontAwesome prop is passed in.
  */
