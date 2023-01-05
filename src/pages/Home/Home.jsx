@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import LogoLinks from '../../components/LogoLinks/LogoLinks';
 import APropos from '../../components/APropos/APropos';
+import TypingEffect from '../../components/TypingEffect/TypingEffect';
+import ProcessDev from '../../components/ProcessDev/ProcessDev';
 
 function Home() {
   // Remettre scroll à 0 lors du rechargement de la page
@@ -21,6 +23,8 @@ function Home() {
         <LogoLinks />
       </section>
       <APropos />
+      <TypingEffect />
+      <ProcessDev />
     </div>
   );
 }
