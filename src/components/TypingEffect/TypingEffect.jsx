@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function TypingEffect() {
   return (
@@ -15,9 +16,15 @@ function TypingEffect() {
         </p>
         <p>
           Je suis passionné par les nouvelles technologies et j&apos;aime
-          relever de nouveaux défis pour améliorer mes compétences. Mon
-          portfolio montre les différents projets sur lesquels j&apos;ai
-          travaillé, ainsi que mes compétences en développement web.
+          relever de nouveaux défis pour améliorer mes compétences. La page{' '}
+          <NavLink
+            to="/projets"
+            className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
+          >
+            &apos;Mes Projets&apos;
+          </NavLink>{' '}
+          montre les différents projets sur lesquels j&apos;ai travaillé, ainsi
+          que mes compétences en développement web.
         </p>
         <p>
           Je suis motivé et prêt à mettre mes compétences à votre service pour

@@ -3,6 +3,9 @@
   /*This part is important for centering*/
   display: grid;
   place-items: center;
+  a {
+    transition: unset;
+  }
 }
 
 .typing-demo {
