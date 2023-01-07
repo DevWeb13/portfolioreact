@@ -46,20 +46,9 @@
   }
 }
 
-@keyframes showLogoLinks {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-
 .logoLinksContainer a {
   animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
-  animation: showLogoLinks 0.5s forwards;
+  animation: shiftToTheLeft 0.5s forwards;
   opacity: 0;
   transform: translateX(20px);
 }

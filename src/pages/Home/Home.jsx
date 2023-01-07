@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import LogoLinks from '../../components/LogoLinks/LogoLinks';
 import APropos from '../../components/APropos/APropos';
-import TypingEffect from '../../components/AProposText/AProposText';
+import AProposText from '../../components/AProposText/AProposText';
 import ProcessDev from '../../components/ProcessDev/ProcessDev';
+import ImgBack from '../../components/ImgBack/ImgBack';
 
 function Home() {
-  // Remettre scroll à 0 lors du rechargement de la page
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }, []);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 
   return (
     <div id="home">
@@ -23,7 +21,8 @@ function Home() {
         <LogoLinks />
       </section>
       <APropos />
-      <TypingEffect />
+      <AProposText />
+      <ImgBack />
       <ProcessDev />
     </div>
   );

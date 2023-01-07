@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 function Header() {
-  window.onscroll = () => {
+  function displayBackToTopButton() {
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
       if (window.scrollY > 100) {
@@ -14,7 +14,10 @@ function Header() {
         backToTop.classList.remove('btVisible');
       }
     }
-  };
+  }
+
+  window.addEventListener('scroll', displayBackToTopButton);
+
   return (
     <header className="header" id="header">
       <div className="logo" />

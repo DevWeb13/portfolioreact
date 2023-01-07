@@ -15,10 +15,7 @@ function AProposText() {
         (entries) => {
           for (const entry of entries) {
             if (entry.isIntersecting) {
-              console.log(entry);
-
               entry.target.classList.add('visible');
-
               observer.unobserve(entry.target);
             } else {
               const element = entry.target;
@@ -44,30 +41,42 @@ function AProposText() {
 
   return (
     <section id="AProposTextWrapper">
+      <h3>Bonjour et bienvenue sur mon site web!</h3>
       <h3>
-        Bonjour, je suis un développeur web diplômé en développement
-        d&apos;application Javascript/React RNCP de niveau 6.
+        Je suis un développeur web passionné par les nouvelles technologies et
+        j&apos;adore relever de nouveaux défis pour améliorer mes compétences.
       </h3>
       <h3>
-        J&apos;ai acquis une solide expérience dans le développement
-        d&apos;applications web grâce à mes études et à mes projets personnels.
-      </h3>
-      <h3>
-        Je suis passionné par les nouvelles technologies et j&apos;aime relever
-        de nouveaux défis pour améliorer mes compétences. La page{' '}
+        Si vous jetez un coup d&apos;œil à la page{' '}
         <NavLink
           to="/projets"
           className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
         >
           &apos;Mes Projets&apos;
         </NavLink>{' '}
-        montre les différents projets sur lesquels j&apos;ai travaillé, ainsi
-        que mes compétences en développement web.
+        , vous pourrez voir les différents projets sur lesquels j&apos;ai
+        travaillé.
       </h3>
       <h3>
-        Je suis motivé et prêt à mettre mes compétences à votre service pour
-        réussir vos projets. Si vous êtes intéressé par mes services,
-        n&apos;hésitez pas à me contacter pour plus d&apos;informations.
+        Ma passion pour le développement web m&apos;a conduit à obtenir un
+        diplôme RNCP de niveau 6 de &apos;développeur d&apos;applications&apos;.
+        J&apos;ai également acquis une solide expérience dans ce domaine à
+        travers mes études et mes projets personnels.
+      </h3>
+
+      <h3>
+        Vous cherchez un développeur web compétent et motivé pour réaliser vos
+        projets de manière professionnelle et efficiente ?
+      </h3>
+      <h3>Je suis là pour vous !</h3>
+      <h3>
+        Mes compétences et mon expérience en développement d&apos;applications
+        web sont à votre disposition pour vous aider à atteindre vos objectifs.
+      </h3>
+      <h3>
+        N&apos;hésitez pas à me contacter pour plus d&apos;informations ou pour
+        discuter de votre projet en détail. Je suis impatient de vous aider à
+        réussir.
       </h3>
     </section>
   );
