@@ -49,8 +49,6 @@ body {
   background: $colorLight;
   color: $colorDark;
   font-family: 'Yanone Kaffeesatz';
-
-  //font-size: calc(0.5rem + 0.5vw);
 }
 
 #root {
@@ -82,24 +80,7 @@ p {
 
 h1 {
   display: none;
-  // text-align: center;
-  // font-weight: bold;
-  // color: $colorPrimaryLighten;
-  // font-size: $fontSizeXSmall;
-  // font-family: 'Taviraj', sans-serif;
-  // height: 60px;
-  // @include small {
-  //   font-size: $fontSizeSmall;
-  // }
-  // @include medium {
-  //   font-size: $fontSizeMedium;
-  // }
-  // @include large {
-  //   font-size: $fontSizeLarge;
-  // }
-  // @include xLarge {
-  //   font-size: $fontSizeXLarge;
-  // }
+  font-family: 'PT Sans', sans-serif;
 }
 
 li {

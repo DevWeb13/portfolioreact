@@ -17,8 +17,8 @@ function Home() {
     <div id="home">
       <section id="wrapperH1LogoLinks">
         <h1>
-          <span className="titleAppears">Giuliano Loic</span>
-          <span className="titleAppears">Développeur web</span>
+          <span className="titleAppears">LA REPONSE DEV</span>
+          <span className="titleAppears">Création de site web</span>
         </h1>
         <LogoLinks />
       </section>
