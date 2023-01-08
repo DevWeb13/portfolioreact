@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
+import displayBackToTopButton from '../../services/displayBackToTopButton';
 
 function Header() {
-  function displayBackToTopButton() {
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-      if (window.scrollY > 100) {
-        backToTop.classList.remove('btHidden');
-        backToTop.classList.add('btVisible');
-      } else {
-        backToTop.classList.add('btHidden');
-        backToTop.classList.remove('btVisible');
-      }
-    }
-  }
+  // scroll not smoothly to the top of the page
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 
   window.addEventListener('scroll', displayBackToTopButton);
 

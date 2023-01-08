@@ -1,34 +1,15 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import addIntersectionObserver from '../../services/addIntersectionObserver';
 
 function AProposText() {
   useEffect(() => {
-    const text = document.querySelector('.text');
-    console.log(text);
-
     const paragraphs = document.querySelectorAll('h3');
     let delay = 0;
     const interval = 1000; // 1 seconde
 
     setTimeout(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            } else {
-              const element = entry.target;
-              const content = element.innerHTML;
-              const cacheKey = `cache-${element.id}`;
-              caches.open('my-cache').then((cache) => {
-                cache.put(cacheKey, new Response(content));
-              });
-            }
-          }
-        },
-        { threshold: 1 },
-      );
+      const observer = addIntersectionObserver('visible');
 
       paragraphs.forEach((paragraph) => {
         setTimeout(() => {
@@ -58,10 +39,11 @@ function AProposText() {
         travaillé.
       </h3>
       <h3>
-        Ma passion pour le développement web m&apos;a conduit à obtenir un
-        diplôme RNCP de niveau 6 de &apos;développeur d&apos;applications&apos;.
-        J&apos;ai également acquis une solide expérience dans ce domaine à
-        travers mes études et mes projets personnels.
+        Ma passion pour le développement web m&apos;a conduit à obtenir une
+        certification RNCP de niveau 6 (bac +3/4) &apos;DÉVELOPPEUR
+        D&apos;APPLICATION&apos;. J&apos;ai également acquis une solide
+        expérience dans ce domaine à travers mes études et mes projets
+        personnels.
       </h3>
 
       <h3>

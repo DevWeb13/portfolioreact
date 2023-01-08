@@ -1,12 +1,3 @@
-@keyframes showText {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .text {
   animation: showText 1s forwards ease-out;
   animation-delay: 2.5s;
