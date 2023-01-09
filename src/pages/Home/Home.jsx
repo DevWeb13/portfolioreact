@@ -15,9 +15,10 @@ function Home() {
         </h1>
         <LogoLinks />
       </section>
-      <APropos />
+      <APropos title="À-PROPOS" />
       <AProposText />
       <ImgBack />
+
       <Boxes />
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur,

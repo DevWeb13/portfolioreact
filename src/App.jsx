@@ -14,6 +14,10 @@ function App({ isDev }) {
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
   });
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
   return (
     <div className="App">
       <BrowserRouter>

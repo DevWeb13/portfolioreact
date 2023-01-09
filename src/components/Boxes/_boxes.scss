@@ -1,10 +1,42 @@
+.appearsBoxesContainer {
+  opacity: 0;
+  .boxesContainer {
+    width: 0;
+  }
+}
+
+.boxesContainerVisible {
+  opacity: 1;
+  animation: appearsBoxesContainer 2.5s linear;
+  .boxesContainer {
+    width: 500px;
+    height: 500px;
+    @include small {
+      width: 550px;
+      height: 550px;
+    }
+    @include medium {
+      width: 600px;
+      height: 600px;
+    }
+    @include large {
+      width: 700px;
+      height: 700px;
+    }
+    @include xLarge {
+      width: 800px;
+      height: 800px;
+    }
+  }
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@keyframes identifier {
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -13,34 +45,20 @@
   }
 }
 
+@keyframes appearsBoxesContainer {
+  0% {
+    transform: translateX(-100%) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
 .boxesContainer {
   display: flex;
-  width: 100%;
-  // max-width: 1440px;
-  width: 500px;
-  height: 500px;
-  background-color: rgba(127, 86, 167);
-
   background-color: transparent;
-
   overflow: hidden;
-  animation: identifier infinite 100s linear;
-  @include small {
-    width: 550px;
-    height: 550px;
-  }
-  @include medium {
-    width: 600px;
-    height: 600px;
-  }
-  @include large {
-    width: 700px;
-    height: 700px;
-  }
-  @include xLarge {
-    width: 800px;
-    height: 800px;
-  }
+  animation: rotate infinite 100s linear;
 }
 
 .boxes {

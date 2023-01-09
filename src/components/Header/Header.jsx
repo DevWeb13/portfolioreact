@@ -4,12 +4,6 @@ import ToggleTheme from '../ToggleTheme/ToggleTheme';
 import displayBackToTopButton from '../../services/displayBackToTopButton';
 
 function Header() {
-  // scroll not smoothly to the top of the page
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-
   window.addEventListener('scroll', displayBackToTopButton);
 
   return (

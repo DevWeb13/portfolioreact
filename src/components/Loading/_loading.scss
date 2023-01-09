@@ -1,4 +1,4 @@
-@keyframes rotate {
+@keyframes rotateLoader {
   0% {
     transform: rotate(0deg);
     border-top-color: $colorDark;
@@ -17,7 +17,7 @@
   border-radius: 50%;
   padding: 8px;
   border: 2px solid transparent;
-  animation: rotate linear 3.5s infinite;
+  animation: rotateLoader linear 3.5s infinite;
 }
 
 .loading {
@@ -44,22 +44,23 @@
   @include loaderDivMixin;
   border-radius: 50%;
   padding: 4px;
-  animation: rotate 4s infinite linear;
-  div {
+  animation: rotateLoader 4s infinite linear;
+  .loaderDiv {
     height: 100%;
     @include loaderDivMixin;
     border-radius: 50%;
     padding: 4px;
-    animation: rotate 4s infinite linear;
+    animation: rotateLoader 4s infinite linear;
   }
 }
-
-div:hover {
+.loading:hover,
+.loader:hover,
+.loaderDiv:hover {
   animation-play-state: paused;
 }
 
 /* ******************* DARK MODE ******************* */
-@keyframes rotateDark {
+@keyframes rotateLoaderDark {
   0% {
     transform: rotate(0deg);
     border-top-color: $colorLight;
@@ -81,9 +82,9 @@ div:hover {
     }
   }
   .loader {
-    animation: rotateDark 4s infinite linear;
+    animation: rotateLoaderDark 4s infinite linear;
     div {
-      animation: rotateDark 4s infinite linear;
+      animation: rotateLoaderDark 4s infinite linear;
     }
   }
 }

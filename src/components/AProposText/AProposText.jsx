@@ -6,7 +6,7 @@ function AProposText() {
   useEffect(() => {
     const paragraphs = document.querySelectorAll('h3');
     let delay = 0;
-    const interval = 1000; // 1 seconde
+    const interval = 500; // 1 seconde
 
     setTimeout(() => {
       const observer = addIntersectionObserver('visible');
