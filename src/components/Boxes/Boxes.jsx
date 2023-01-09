@@ -6,6 +6,7 @@ import mongoLogo from '../../assets/mongodb-svgrepo-com.svg';
 import nodeLogo from '../../assets/nodejs-svgrepo-com.svg';
 import expressLogo from '../../assets/express-svgrepo-com.svg';
 import vercelLogo from '../../assets/vercel-svgrepo-com.svg';
+import htmlLogo from '../../assets/html-5-svgrepo-com.svg';
 
 function Boxes() {
   useEffect(() => {
@@ -167,6 +168,27 @@ function Boxes() {
           </div>
           <div className="left-side">
             <img src={vercelLogo} alt="vercelLogo" />
+          </div>
+        </div>
+
+        <div className="box box-8 ">
+          <div className="top-side">
+            <img src={htmlLogo} alt="vercelLogo" />
+          </div>
+          <div className="bottom-side">
+            <img src={htmlLogo} alt="vercelLogo" />
+          </div>
+          <div className="front-side">
+            <img src={htmlLogo} alt="vercelLogo" />
+          </div>
+          <div className="back-side">
+            <img src={htmlLogo} alt="vercelLogo" />
+          </div>
+          <div className="right-side">
+            <img src={htmlLogo} alt="vercelLogo" />
+          </div>
+          <div className="left-side">
+            <img src={htmlLogo} alt="vercelLogo" />
           </div>
         </div>
       </div>

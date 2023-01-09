@@ -3,6 +3,7 @@ import LogoLinks from '../../components/LogoLinks/LogoLinks';
 import APropos from '../../components/APropos/APropos';
 import AProposText from '../../components/AProposText/AProposText';
 import ImgBack from '../../components/ImgBack/ImgBack';
+import Boxes from '../../components/Boxes/Boxes';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <APropos />
       <AProposText />
       <ImgBack />
+      <Boxes />
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur,
         voluptas facere eos, harum assumenda eum nesciunt quis a iste placeat
