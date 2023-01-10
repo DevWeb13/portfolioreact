@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function APropos({ title }) {
-  const titleArray = title.split('');
+function AnimatedTextAndShadow({ title }) {
+  const letterArray = title.split('');
 
   return (
     <>
       <div className="text">
-        {titleArray.map((letter, index) => (
+        {letterArray.map((letter, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <div className="wrapper" key={letter + index + title}>
             <div id={index} className="letter">
@@ -23,8 +23,8 @@ function APropos({ title }) {
   );
 }
 
-export default APropos;
+export default AnimatedTextAndShadow;
 
-APropos.propTypes = {
+AnimatedTextAndShadow.propTypes = {
   title: PropTypes.string.isRequired,
 };

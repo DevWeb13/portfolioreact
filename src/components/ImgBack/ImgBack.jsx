@@ -5,18 +5,18 @@ import parallax from '../../services/parallax';
 function ImgBack() {
   const monElementRef = useRef(null);
 
-  if (monElementRef.current) {
-    window.addEventListener('scroll', () =>
-      parallax(monElementRef, '.parallax'),
-    );
-  }
+  useEffect(() => {
+    if (monElementRef.current) {
+      window.addEventListener('scroll', () =>
+        parallax(monElementRef, '.parallax'),
+      );
+    }
+  }, [monElementRef]);
 
   useEffect(() => {
-    setTimeout(() => {
-      const imgBackWrapper = document.querySelector('#imgBackWrapper');
-      const observer = addIntersectionObserver('visibleImgBackWrapper');
-      if (imgBackWrapper) observer.observe(imgBackWrapper);
-    }, 3000);
+    const imgBackWrapper = document.querySelector('#imgBackWrapper');
+    const observer = addIntersectionObserver('visibleImgBackWrapper');
+    if (imgBackWrapper) observer.observe(imgBackWrapper);
   }, []);
 
   return (

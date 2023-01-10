@@ -5,8 +5,10 @@
   font-size: 30px;
   opacity: 0;
   user-select: none;
+  letter-spacing: calc(-0.3rem - 1vw);
   @include small {
     font-size: 40px;
+    letter-spacing: normal;
   }
   @include medium {
     font-size: 50px;

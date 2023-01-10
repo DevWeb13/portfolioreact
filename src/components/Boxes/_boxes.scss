@@ -8,6 +8,8 @@
 .boxesContainerVisible {
   opacity: 1;
   animation: appearsBoxesContainer 2.5s linear;
+  position: relative;
+  bottom: calc(3.75rem);
   .boxesContainer {
     width: 500px;
     height: 500px;
