@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
@@ -14,10 +14,12 @@ function App({ isDev }) {
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
   });
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>

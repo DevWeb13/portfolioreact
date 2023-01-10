@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import LogoLinks from '../../components/LogoLinks/LogoLinks';
 import APropos from '../../components/APropos/APropos';
 import AProposText from '../../components/AProposText/AProposText';
 import ImgBack from '../../components/ImgBack/ImgBack';
-import Boxes from '../../components/Boxes/Boxes';
+
+const Boxes = lazy(() => import('../../components/Boxes/Boxes'));
 
 function Home() {
   return (
@@ -18,7 +19,6 @@ function Home() {
       <APropos title="À-PROPOS" />
       <AProposText />
       <ImgBack />
-
       <Boxes />
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur,
