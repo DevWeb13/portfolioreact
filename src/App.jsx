@@ -14,12 +14,17 @@ function App({ isDev }) {
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
   });
-  useEffect(() => {
-    window.scrollTo({
+  async function scrollToTop() {
+    await window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
+  }
+
+  useEffect(() => {
+    scrollToTop();
   }, []);
+
   return (
     <div className="App">
       <BrowserRouter>

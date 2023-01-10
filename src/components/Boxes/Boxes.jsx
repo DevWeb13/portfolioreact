@@ -33,13 +33,11 @@ function Boxes() {
     );
     console.log(appearsBoxesContainer);
 
-    setTimeout(() => {
-      const observer = addIntersectionObserver('boxesContainerVisible');
+    const observer = addIntersectionObserver('boxesContainerVisible');
 
-      if (appearsBoxesContainer) {
-        observer.observe(appearsBoxesContainer);
-      }
-    }, 3000);
+    if (appearsBoxesContainer) {
+      observer.observe(appearsBoxesContainer);
+    }
   }, []);
 
   return (
