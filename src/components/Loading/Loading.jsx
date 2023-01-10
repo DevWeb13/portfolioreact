@@ -5,15 +5,15 @@ function Loading() {
     <div className="loading">
       <h1>Touch me if you can !</h1>
       <div className="loader">
-        <div>
-          <div>
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>
-                        <div>
+        <div className="loaderDiv">
+          <div className="loaderDiv">
+            <div className="loaderDiv">
+              <div className="loaderDiv">
+                <div className="loaderDiv">
+                  <div className="loaderDiv">
+                    <div className="loaderDiv">
+                      <div className="loaderDiv">
+                        <div className="loaderDiv">
                           <div />
                         </div>
                       </div>

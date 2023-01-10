@@ -1,197 +1,308 @@
+.appearsBoxesContainer {
+  opacity: 0;
+  .boxesContainer {
+    // width: 0;
+  }
+}
+
+.boxesContainerVisible {
+  opacity: 1;
+  animation: appearsBoxesContainer 2.5s linear;
+  position: relative;
+  bottom: calc(3.75rem);
+  .boxesContainer {
+    width: 500px;
+    height: 500px;
+    @include small {
+      width: 550px;
+      height: 550px;
+    }
+    @include medium {
+      width: 600px;
+      height: 600px;
+    }
+    @include large {
+      width: 700px;
+      height: 700px;
+    }
+    @include xLarge {
+      width: 800px;
+      height: 800px;
+    }
+  }
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.boxesContainer {
-  display: none;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-@include small {
-  .boxesContainer {
-    display: flex;
-    width: 100%;
-    max-width: 1440px;
-    height: calc(100vh - $headerHeightXSmall - $gap);
-    background-color: rgba(127, 86, 167);
-    position: absolute;
-    background-color: transparent;
-    z-index: -1;
-    overflow: hidden;
-  }
 
-  .boxes {
-    width: 100%;
-    height: 100%;
-    perspective: 150rem;
-    position: relative;
-    // font-size: 1rem;
+@keyframes appearsBoxesContainer {
+  0% {
+    transform: translateX(-100%) rotate(-180deg);
   }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
 
-  .box {
-    transform-style: preserve-3d;
-    transform: rotateY(45deg) rotateX(30deg);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 1s;
-    cursor: pointer;
-  }
-  .active.box {
-    top: -250px;
-    left: -35%;
-    transition: all 1s;
-  }
-  // .active.box.adjustRight {
-  //   left: 2rem;
-  // }
-  // .active.box.adjustLeft {
-  //   left: -2rem;
-  // }
+.boxesContainer {
+  display: flex;
+  background-color: transparent;
+  overflow: hidden;
+  animation: rotate infinite 100s linear;
+}
 
-  @keyframes boxAnim {
-    0% {
-      transform: rotateX(0) rotateY(0) rotateZ(0);
-    }
-    100% {
-      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-    }
-  }
+.boxes {
+  perspective: 150rem;
+}
 
-  .box-1 {
-    left: -250rem;
-    top: -60rem;
-    animation: boxAnim 100s infinite linear;
-  }
+.box {
+  transform-style: preserve-3d;
+  transform: rotateY(45deg) rotateX(30deg);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+.active.box {
+  top: 0;
+  left: 0;
+  transition: all 1s;
+}
 
-  .box-2 {
-    left: -110rem;
-    top: -230rem;
-    animation: boxAnim 100s -10s infinite linear;
-  }
+.box-1 {
+  top: calc(-7.5rem - 10vw);
+  left: 0rem;
+  animation: boxAnim 100s infinite linear;
+}
 
-  .box-3 {
-    left: 100rem;
-    top: -230rem;
-    animation: boxAnim 100s -20s infinite linear;
-  }
+.box-2 {
+  top: calc(-5rem - 7.5vw);
+  left: calc(5rem + 7.5vw);
+  animation: boxAnim 100s -10s infinite linear;
+}
 
-  .box-4 {
-    left: 250rem;
-    top: -60rem;
-    animation: boxAnim 100s -30s infinite linear;
-  }
+.box-3 {
+  top: calc(5rem + 7.5vw);
+  left: calc(-5rem - 7.5vw);
+  animation: boxAnim 100s -20s infinite linear;
+}
 
-  .box-5 {
-    left: 220rem;
-    top: 130rem;
-    animation: boxAnim 100s -40s infinite linear;
-  }
+.box-4 {
+  top: 0rem;
+  left: calc(-7.5rem - 10vw);
+  animation: boxAnim 100s -30s infinite linear;
+}
 
-  .box-6 {
-    left: 0;
-    top: 250rem;
-    animation: boxAnim 100s -50s infinite linear;
-  }
+.box-5 {
+  top: 0rem;
+  left: calc(7.5rem + 10vw);
+  animation: boxAnim 100s -40s infinite linear;
+}
 
-  .box-7 {
-    left: -210rem;
-    top: 140rem;
-    animation: boxAnim 100s -60s infinite linear;
-  }
+.box-6 {
+  top: calc(-5rem - 7.5vw);
+  left: calc(-5rem - 7.5vw);
+  animation: boxAnim 100s -50s infinite linear;
+}
 
-  .box div {
+.box-7 {
+  top: calc(5rem + 7.5vw);
+  left: calc(5rem + 7.5vw);
+  animation: boxAnim 100s -60s infinite linear;
+}
+.box-8 {
+  top: calc(7.5rem + 10vw);
+  left: 0rem;
+  animation: boxAnim 100s -70s infinite linear;
+}
+
+.box div {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  opacity: 0.8;
+  box-shadow: 0.1rem 0.1rem 0.1rem $colorPrimary inset,
+    -0.1rem -0.1rem 0.1rem $colorPrimary inset,
+    0.1rem 0.1rem 3.5rem rgba(0, 0, 0, 0.2),
+    -0.1rem -0.1rem 3.5rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $colorLight;
+  transition: all 0.2s 1s ease-in-out;
+  @include medium {
+    width: 4rem;
+    height: 4rem;
+  }
+  @include large {
     width: 5rem;
     height: 5rem;
-    position: absolute;
-    opacity: 0.8;
-    box-shadow: 0.1rem 0.1rem 0.1rem $colorPrimary inset,
-      -0.1rem -0.1rem 0.1rem $colorPrimary inset,
-      0.1rem 0.1rem 3.5rem rgba(0, 0, 0, 0.2),
-      -0.1rem -0.1rem 3.5rem rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $colorLight;
-    img {
-      width: 90%;
-      height: 90%;
-      object-fit: cover;
-    }
   }
+  img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+  }
+}
 
-  .top-side {
+.top-side {
+  transform: rotateX(90deg) translateZ(1.5rem);
+  @include medium {
+    transform: rotateX(90deg) translateZ(2rem);
+  }
+  @include large {
     transform: rotateX(90deg) translateZ(2.5rem);
   }
+}
 
-  .bottom-side {
-    transform: rotateX(90deg) translateZ(-2.5rem);
-    img {
-      transform: scaleX(-1);
-    }
+.bottom-side {
+  transform: rotateX(90deg) translateZ(-1.5rem);
+  @include medium {
+    transform: rotateX(90deg) translateZ(-2rem);
   }
+  @include large {
+    transform: rotateX(90deg) translateZ(-2.5rem);
+  }
+}
 
-  .front-side {
+.front-side {
+  transform: translateZ(1.5rem);
+  @include medium {
+    transform: translateZ(2rem);
+  }
+  @include large {
     transform: translateZ(2.5rem);
   }
+}
 
-  .back-side {
+.back-side {
+  transform: translateZ(-1.5rem);
+  @include medium {
+    transform: translateZ(-2rem);
+  }
+  @include large {
     transform: translateZ(-2.5rem);
   }
+}
 
-  .right-side {
+.right-side {
+  transform: rotateY(-90deg) translateX(1.5rem);
+
+  transform-origin: right;
+  @include medium {
+    transform: rotateY(-90deg) translateX(2rem);
+  }
+  @include large {
     transform: rotateY(-90deg) translateX(2.5rem);
-    transform-origin: right;
-    img {
-      transform: scaleX(-1);
-    }
   }
+}
 
-  .left-side {
+.left-side {
+  transform: rotateY(90deg) translateX(-1.5rem);
+  transform-origin: left;
+  @include medium {
+    transform: rotateY(90deg) translateX(-2rem);
+  }
+  @include large {
     transform: rotateY(90deg) translateX(-2.5rem);
-    transform-origin: left;
   }
+}
 
-  .active.box div {
+.active.box div {
+  width: 6rem;
+  height: 6rem;
+  transition: all 0.2s 1s ease-in-out;
+  position: absolute;
+  @include medium {
+    width: 7rem;
+    height: 7rem;
+  }
+  @include large {
     width: 8rem;
     height: 8rem;
-    transition: all 0.2s 0.5s ease-in-out;
-    position: absolute;
   }
+}
 
-  .active .top-side {
+.active .top-side {
+  transform: rotateX(90deg) translateZ(3rem);
+  @include medium {
+    transform: rotateX(90deg) translateZ(3.5rem);
+  }
+  @include large {
     transform: rotateX(90deg) translateZ(4rem);
   }
+}
 
-  .active .bottom-side {
+.active .bottom-side {
+  transform: rotateX(90deg) translateZ(-3rem);
+  @include medium {
+    transform: rotateX(90deg) translateZ(-3.5rem);
+  }
+  @include large {
     transform: rotateX(90deg) translateZ(-4rem);
   }
+}
 
-  .active .front-side {
+.active .front-side {
+  transform: translateZ(3rem);
+  @include medium {
+    transform: translateZ(3.5rem);
+  }
+  @include large {
     transform: translateZ(4rem);
   }
+}
 
-  .active .back-side {
+.active .back-side {
+  transform: translateZ(-3rem);
+  @include medium {
+    transform: translateZ(-3.5rem);
+  }
+  @include large {
     transform: translateZ(-4rem);
   }
+}
 
-  .active .right-side {
+.active .right-side {
+  transform: rotateY(-90deg) translateX(3rem);
+  transform-origin: right;
+  @include medium {
+    transform: rotateY(-90deg) translateX(3.5rem);
+  }
+  @include large {
     transform: rotateY(-90deg) translateX(4rem);
-    transform-origin: right;
   }
+}
 
-  .active .left-side {
+.active .left-side {
+  transform: rotateY(90deg) translateX(-3rem);
+  transform-origin: left;
+  @include medium {
+    transform: rotateY(90deg) translateX(-3.5rem);
+  }
+  @include large {
     transform: rotateY(90deg) translateX(-4rem);
-    transform-origin: left;
   }
+}
 
-  .dark {
-    .box div {
-      box-shadow: 0.1rem 0.1rem 0.1rem $colorDarkSecondary inset,
-        -0.1rem -0.1rem 0.1rem $colorDarkSecondary inset,
-        0.1rem 0.1rem 3.5rem rgba(255, 255, 255, 0.2),
-        -0.1rem -0.1rem 3.5rem rgba(255, 255, 255, 0.2);
-    }
+.dark {
+  .box div {
+    box-shadow: 0.1rem 0.1rem 0.1rem $colorDarkPrimary inset,
+      -0.1rem -0.1rem 0.1rem $colorDarkPrimary inset,
+      0.1rem 0.1rem 3.5rem rgba(255, 255, 255, 0.2),
+      -0.1rem -0.1rem 3.5rem rgba(255, 255, 255, 0.2);
   }
 }

@@ -1,5 +1,6 @@
 @import './variables';
 @import './settings';
+@import './keyframes';
 @import '../pages/Home/home';
 @import '../pages/Contact/contact';
 @import '../pages/Projects/projects';
@@ -13,3 +14,6 @@
 @import '../components/ProjectCard/projectCard';
 @import '../components/ButtonLink/buttonLink';
 @import '../components/Boxes/boxes';
+@import '../components/AnimatedTextAndShadow/animatedTextAndShadow';
+@import '../components/AProposText/aProposText';
+@import '../components/ImgBack/imgBack';

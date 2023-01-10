@@ -36,10 +36,10 @@
 
 .dark {
   .buttonLink {
-    background: $colorDarkSecondary;
+    background: $colorDarkPrimary;
     color: $colorDark;
     &:hover {
-      background: $colorDarkSecondaryDarken;
+      background: $colorDarkPrimaryDarken;
 
       color: $colorLight;
       .icon {

@@ -1,0 +1,50 @@
+#AProposTextWrapper {
+  position: relative;
+  width: 90%;
+  bottom: 5rem;
+  text-align: center;
+  @include small {
+    bottom: 6rem;
+  }
+  @include medium {
+    bottom: 7rem;
+  }
+  @include large {
+    bottom: 8rem;
+  }
+  @include xLarge {
+    bottom: 9rem;
+  }
+  h3 {
+    opacity: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    @include small {
+      font-size: 1.8rem;
+    }
+    @include medium {
+      font-size: 2rem;
+    }
+    @include large {
+      font-size: 2.2rem;
+    }
+    @include xLarge {
+      font-size: 2.4rem;
+    }
+
+    a {
+      transition: unset;
+    }
+  }
+  .visible {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+  }
+}
+
+.dark {
+  #AProposTextWrapper {
+    color: $colorDarkPrimary;
+  }
+}

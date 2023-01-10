@@ -123,18 +123,18 @@
       background-position: center;
     }
     .navActive {
-      color: $colorDarkSecondary;
+      color: $colorDarkPrimary;
     }
     .line {
-      background: $colorDarkSecondary;
-      box-shadow: 0 0 20px 5px $colorDarkSecondary;
+      background: $colorDarkPrimary;
+      box-shadow: 0 0 20px 5px $colorDarkPrimary;
     }
     #backToTop {
-      color: $colorDarkSecondary;
+      color: $colorDarkPrimary;
       background: rgba(255, 255, 255, 0.25);
     }
     #backToTop:hover {
-      background: $colorDarkSecondary;
+      background: $colorDarkPrimary;
       color: $colorDark;
     }
   }

@@ -1,8 +1,8 @@
 .logoLinksContainer {
+  align-items: center;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  width: 75%;
+  width: 100%;
   .logoLink {
     height: calc($fontSizeXSmall + $gapSmall);
     width: calc($fontSizeXSmall + $gapSmall);
@@ -44,4 +44,27 @@
       height: calc($fontSizeXLarge + 3px);
     }
   }
+}
+
+.logoLinksContainer a {
+  animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
+  animation: shiftToTheLeft 0.5s forwards;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.logoLinksContainer a:first-child {
+  animation-delay: 1.8s;
+}
+
+.logoLinksContainer a:nth-child(2) {
+  animation-delay: 1.9s;
+}
+
+.logoLinksContainer a:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.logoLinksContainer a:last-child {
+  animation-delay: 2.1s;
 }

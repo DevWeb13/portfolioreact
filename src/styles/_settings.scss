@@ -48,8 +48,7 @@ $breakpoints: (
 body {
   background: $colorLight;
   color: $colorDark;
-  font-family: 'Imprima', sans-serif;
-  //font-size: calc(0.5rem + 0.5vw);
+  font-family: 'Yanone Kaffeesatz';
 }
 
 #root {
@@ -81,24 +80,7 @@ p {
 
 h1 {
   display: none;
-  // text-align: center;
-  // font-weight: bold;
-  // color: $colorPrimaryLighten;
-  // font-size: $fontSizeXSmall;
-  // font-family: 'Taviraj', sans-serif;
-  // height: 60px;
-  // @include small {
-  //   font-size: $fontSizeSmall;
-  // }
-  // @include medium {
-  //   font-size: $fontSizeMedium;
-  // }
-  // @include large {
-  //   font-size: $fontSizeLarge;
-  // }
-  // @include xLarge {
-  //   font-size: $fontSizeXLarge;
-  // }
+  font-family: 'PT Sans', sans-serif;
 }
 
 li {
@@ -126,12 +108,12 @@ button {
 .dark {
   background: $colorDark;
   h1 {
-    color: $colorDarkSecondary;
+    color: $colorDarkPrimary;
   }
   a {
     color: lighten($colorSecondary, 20%);
     &:hover {
-      color: lighten($colorDarkSecondary, 20%);
+      color: lighten($colorDarkPrimary, 20%);
     }
   }
 }

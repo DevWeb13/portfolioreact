@@ -1,0 +1,25 @@
+#imgBackWrapper {
+  width: 100%;
+  height: calc(1rem + 20vw);
+  display: block;
+  opacity: 0;
+  position: relative;
+  bottom: 2rem;
+  clip-path: polygon(0 30%, 100% 0, 95% 100%, 2% 60%);
+  .parallax {
+    animation: scroll 5s alternate linear infinite;
+    background-image: url('../../assets/developpeur-freelance-devenir-comment-1024x683.jpg');
+    background-position: 50% 0%;
+    background-size: cover;
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: background-position 0.35s ease;
+  }
+}
+
+.visibleImgBackWrapper {
+  animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
+  animation: shiftToTheLeftBig 0.5s forwards;
+  opacity: 0;
+}

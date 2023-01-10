@@ -34,6 +34,14 @@ function Projets() {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          } else {
+            const element = entry.target;
+            const content = element.innerHTML;
+            const cacheKey = `cache-${element.id}`;
+            caches.open('my-cache').then((cache) => {
+              cache.put(cacheKey, new Response(content));
+            });
           }
         }
       },
