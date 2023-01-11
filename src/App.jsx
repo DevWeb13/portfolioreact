@@ -15,10 +15,15 @@ function App({ isDev }) {
     cacheTime: 1000 * 60 * 60 * 24,
   });
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
+    window.addEventListener('beforeunload', () => {
+      window.scrollTo(0, 0);
     });
+
+    return () => {
+      window.removeEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+      });
+    };
   }, []);
   return (
     <div className="App">
