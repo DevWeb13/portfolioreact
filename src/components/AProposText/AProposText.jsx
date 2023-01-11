@@ -29,14 +29,8 @@ function AProposText() {
       </h3>
       <h3>
         Si vous jetez un coup d&apos;œil à la page{' '}
-        <NavLink
-          to="/projets"
-          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
-        >
-          &apos;Mes Projets&apos;
-        </NavLink>{' '}
-        , vous pourrez voir les différents projets sur lesquels j&apos;ai
-        travaillé.
+        <NavLink to="/projets">&apos;Mes Projets&apos;</NavLink> , vous pourrez
+        voir les différents projets sur lesquels j&apos;ai travaillé.
       </h3>
       <h3>
         Ma passion pour le développement web m&apos;a conduit à obtenir une

@@ -2,18 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function AnimatedTextAndShadow({ title }) {
-  const letterArray = title.split('');
-
+  const letterObjectArray = title.split('').map((letter) => ({
+    letter,
+    id: Math.random(),
+  }));
   return (
     <>
       <div className="text">
-        {letterArray.map((letter, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <div className="wrapper" key={letter + index + title}>
-            <div id={index} className="letter">
-              {letter}
-            </div>
-            <div className="shadow">{letter}</div>
+        {letterObjectArray.map((letter) => (
+          <div className="wrapper" key={letter.letter + letter.id + title}>
+            <div className="letter">{letter.letter}</div>
+            <div className="shadow">{letter.letter}</div>
           </div>
         ))}
       </div>

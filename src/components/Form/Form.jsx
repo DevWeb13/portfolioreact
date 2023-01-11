@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { TextField } from '@mui/material';
 import ReactModal from 'react-modal';
@@ -47,6 +47,10 @@ function Form() {
     setLoader(false);
   }
 
+  const closeModal = useCallback(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
+
   return loader ? (
     <Loading />
   ) : (
@@ -67,7 +71,7 @@ function Form() {
             size="small"
             className="submit"
             value="🔙 retour"
-            onClick={() => setIsOpen(false)}
+            onClick={closeModal}
           />
         </div>
       </ReactModal>
@@ -90,7 +94,7 @@ function Form() {
               message: 'Maximum 20 caractères',
             },
             pattern: {
-              value: /^[A-Za-z]+$/i,
+              value: /^[a-z]+$/i,
               message: 'Seulement des lettres',
             },
           })}
@@ -121,7 +125,7 @@ function Form() {
               message: 'Maximum 20 caractères',
             },
             pattern: {
-              value: /^[A-Za-z]+$/i,
+              value: /^[a-z]+$/i,
               message: 'Seulement des lettres',
             },
           })}
@@ -165,7 +169,7 @@ function Form() {
           {...register('tel', {
             pattern: {
               message: 'Numéro invalide',
-              value: /^[0-9]{10}$/i,
+              value: /^\d{10}$/i,
             },
           })}
           placeholder="XXXXXXXXXX"
