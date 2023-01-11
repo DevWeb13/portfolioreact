@@ -5,7 +5,7 @@
  * @returns {Array} a sorted array of projects.
  */
 export default function sortProjects(array, type) {
-  const sortedProjects = array.sort((a, b) => {
+  const sortedProjects = [...array].sort((a, b) => {
     return b.date - a.date;
   });
   if (type === 'Tous') {

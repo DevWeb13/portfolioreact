@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import propTypes from 'prop-types';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton';
 
 function ToggleButtonMUI({ alignment, setAlignment }) {
-  const handleChange = (_event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
+  const handleChange = useCallback(
+    (_event, newAlignment) => {
+      setAlignment(newAlignment);
+    },
+    [setAlignment],
+  );
   return (
     <div className="toggleButtonGroupContainer">
       <ToggleButtonGroup
