@@ -39,8 +39,8 @@
     }
 
     .titleAppears {
-      animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
       animation: show 0.8s forwards;
+      animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
       display: block;
       opacity: 0;
       transform-origin: 50% 100%;

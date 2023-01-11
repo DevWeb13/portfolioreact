@@ -19,7 +19,7 @@
 }
 
 .visibleImgBackWrapper {
-  animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
   animation: shiftToTheLeftBig 0.5s forwards;
+  animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
   opacity: 0;
 }
