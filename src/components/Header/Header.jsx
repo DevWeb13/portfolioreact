@@ -1,31 +1,50 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 import displayBackToTopButton from '../../services/displayBackToTopButton';
 
 function Header() {
+  const [homeNavClass, setHomeNavClass] = useState('nav');
+  const [projectsNavClass, setProjectsNavClass] = useState('nav');
+  const [contactNavClass, setContactNavClass] = useState('nav');
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setHomeNavClass('navActive');
+    } else {
+      setHomeNavClass('nav');
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname === '/projets') {
+      setProjectsNavClass('navActive');
+    } else {
+      setProjectsNavClass('nav');
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname === '/contact') {
+      setContactNavClass('navActive');
+    } else {
+      setContactNavClass('nav');
+    }
+  }, [location.pathname]);
   window.addEventListener('scroll', displayBackToTopButton);
 
   return (
     <header className="header" id="header">
       <div className="logo" />
       <nav className="navHeader">
-        <NavLink
-          to="/"
-          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
-        >
+        <NavLink to="/" className={homeNavClass}>
           Accueil
         </NavLink>
-        <NavLink
-          to="/projets"
-          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
-        >
+        <NavLink to="/projets" className={projectsNavClass}>
           Mes projets
         </NavLink>
-        <NavLink
-          to="/contact"
-          className={(nav) => (nav.isActive ? 'navActive' : 'nav')}
-        >
+        <NavLink to="/contact" className={contactNavClass}>
           Me contacter
         </NavLink>
       </nav>
