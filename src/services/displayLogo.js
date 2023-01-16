@@ -10,6 +10,7 @@ import vercelLogo from '../assets/vercel-svgrepo-com.svg';
 import webpackLogo from '../assets/webpack-svgrepo-com.svg';
 import cssLogo from '../assets/css3-logo-svgrepo-com.svg';
 import rechartsLogo from '../assets/recharts.png';
+import bootstrapLogo from '../assets/bootstrap-svgrepo-com.svg';
 
 /**
  * It takes a string as an argument and returns a logo image based on the string
@@ -52,6 +53,9 @@ export default function displayLogo(technology) {
   }
   if (technology === 'recharts') {
     return rechartsLogo;
+  }
+  if (technology === 'bootstrap') {
+    return bootstrapLogo;
   }
   return '';
 }
