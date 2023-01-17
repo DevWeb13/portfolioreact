@@ -6,6 +6,9 @@ import ToggleButton from '@mui/material/ToggleButton';
 function ToggleButtonMUI({ alignment, setAlignment }) {
   const handleChange = useCallback(
     (_event, newAlignment) => {
+      if (newAlignment === null) {
+        return;
+      }
       setAlignment(newAlignment);
     },
     [setAlignment],
