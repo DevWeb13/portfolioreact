@@ -9,7 +9,7 @@ function AProposText() {
     const interval = 500; // 1 seconde
 
     setTimeout(() => {
-      const observer = addIntersectionObserver('visible');
+      const observer = addIntersectionObserver('visible', { threshold: 0.5 });
 
       paragraphs.forEach((paragraph) => {
         setTimeout(() => {

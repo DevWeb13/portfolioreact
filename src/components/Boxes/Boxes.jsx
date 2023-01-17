@@ -33,7 +33,9 @@ function Boxes() {
     );
     console.log(appearsBoxesContainer);
 
-    const observer = addIntersectionObserver('boxesContainerVisible');
+    const observer = addIntersectionObserver('boxesContainerVisible', {
+      threshold: 0.5,
+    });
 
     if (appearsBoxesContainer) {
       observer.observe(appearsBoxesContainer);

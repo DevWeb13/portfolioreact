@@ -15,7 +15,9 @@ function ImgBack() {
 
   useEffect(() => {
     const imgBackWrapper = document.querySelector('#imgBackWrapper');
-    const observer = addIntersectionObserver('visibleImgBackWrapper');
+    const observer = addIntersectionObserver('visibleImgBackWrapper', {
+      threshold: 0.5,
+    });
     if (imgBackWrapper) observer.observe(imgBackWrapper);
   }, []);
 

@@ -6,6 +6,7 @@ import ToggleButtonMUI from '../../components/ToggleButtonMUI/ToggleButtonMUI';
 import sortProjects from '../../services/sortProjects';
 import Loading from '../../components/Loading/Loading';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import addIntersectionObserver from '../../services/addIntersectionObserver';
 
 function Projets() {
   const [alignment, setAlignment] = React.useState('Tous');
@@ -29,26 +30,15 @@ function Projets() {
       }
     });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          } else {
-            const element = entry.target;
-            const content = element.innerHTML;
-            const cacheKey = `cache-${element.id}`;
-            caches.open('my-cache').then((cache) => {
-              cache.put(cacheKey, new Response(content));
-            });
-          }
-        }
-      },
-      { threshold: 0.5 },
-    );
+    let delay = 0;
+    const interval = 500; // 1 seconde
+    const observer = addIntersectionObserver('visible', { threshold: 0.5 });
+
     cards.forEach((project) => {
-      observer.observe(project);
+      setTimeout(() => {
+        observer.observe(project);
+      }, delay);
+      delay += interval;
     });
   }, [projects, alignment]);
 
