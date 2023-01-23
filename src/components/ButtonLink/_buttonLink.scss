@@ -12,12 +12,9 @@
 
   .icon {
     color: white;
-    transform: scale(1);
   }
   &:hover {
     background: $colorPrimaryDarken;
-
-    transform: scale(1.05);
   }
 }
 
@@ -26,7 +23,9 @@
   align-items: center;
   gap: 0.5rem;
   justify-content: space-around;
-
+  margin: 0 auto;
+  font-size: calc(0.65rem + 1vw);
+  max-width: 400px;
   .icon {
     width: calc(1.5rem + 1.5vw);
     height: calc(1.5rem + 1.5vw);

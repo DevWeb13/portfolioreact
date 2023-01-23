@@ -4,6 +4,8 @@
   justify-content: space-around;
   width: 100%;
   .logoLink {
+    transition: all 0.1s;
+    filter: drop-shadow(5px 5px 5px rgb(110, 110, 110));
     height: calc($fontSizeXSmall + $gapSmall);
     width: calc($fontSizeXSmall + $gapSmall);
     @include small {
@@ -21,6 +23,10 @@
     @include xLarge {
       height: calc($fontSizeXLarge + $gapSmall);
       width: calc($fontSizeXLarge + $gapSmall);
+    }
+
+    &:hover {
+      filter: none;
     }
   }
   .twitterLogo {

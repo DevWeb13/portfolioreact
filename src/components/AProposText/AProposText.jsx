@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { lazy, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import addIntersectionObserver from '../../services/addIntersectionObserver';
+
+const ButtonLink = lazy(() => import('../ButtonLink/ButtonLink'));
 
 function AProposText() {
   useEffect(() => {
@@ -35,9 +38,18 @@ function AProposText() {
       <h3>
         Ma passion pour le développement web m&apos;a conduit à obtenir une
         certification RNCP de niveau 6 (bac +3/4) &apos;DÉVELOPPEUR
-        D&apos;APPLICATION&apos;. J&apos;ai également acquis une solide
-        expérience dans ce domaine à travers mes études et mes projets
-        personnels.
+        D&apos;APPLICATION&apos;.
+      </h3>
+      <h3>
+        <ButtonLink
+          href="./titre-a-finalite-professionnelle_OpenClassrooms_Loic_Giuliano_20221221.pdf"
+          text="Cliquer ici pour télécharger mon diplome"
+          iconFontAwesome={faFilePdf}
+        />
+      </h3>
+      <h3>
+        J&apos;ai également acquis une solide expérience dans ce domaine à
+        travers mes études et mes projets personnels.
       </h3>
 
       <h3>
