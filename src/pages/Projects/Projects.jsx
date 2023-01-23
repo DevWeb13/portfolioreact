@@ -1,12 +1,17 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { useQuery, useQueryClient } from 'react-query';
 import getProjectsList from '../../services/dataManager';
-import ToggleButtonMUI from '../../components/ToggleButtonMUI/ToggleButtonMUI';
 import sortProjects from '../../services/sortProjects';
-import Loading from '../../components/Loading/Loading';
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import addIntersectionObserver from '../../services/addIntersectionObserver';
+import Loading from '../../components/Loading/Loading';
+
+const ToggleButtonMUI = lazy(() =>
+  import('../../components/ToggleButtonMUI/ToggleButtonMUI'),
+);
+const ProjectCard = lazy(() =>
+  import('../../components/ProjectCard/ProjectCard'),
+);
 
 function Projets() {
   const [alignment, setAlignment] = React.useState('Tous');

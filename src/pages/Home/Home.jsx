@@ -1,7 +1,9 @@
 import React, { lazy } from 'react';
-import LogoLinks from '../../components/LogoLinks/LogoLinks';
-import AProposText from '../../components/AProposText/AProposText';
 
+const LogoLinks = lazy(() => import('../../components/LogoLinks/LogoLinks'));
+const AProposText = lazy(() =>
+  import('../../components/AProposText/AProposText'),
+);
 const ImgBack = lazy(() => import('../../components/ImgBack/ImgBack'));
 const AnimatedTextAndShadow = lazy(() =>
   import('../../components/AnimatedTextAndShadow/AnimatedTextAndShadow'),
