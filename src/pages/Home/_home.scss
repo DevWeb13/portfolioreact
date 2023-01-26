@@ -16,10 +16,12 @@
       flex-direction: column;
       font-size: calc(1rem + 6vw);
       gap: $gapSmall;
-      line-height: 0.85;
       perspective: 500px;
       @include small {
         align-items: unset;
+      }
+      @include xLarge {
+        font-size: 100px;
       }
     }
 
@@ -45,6 +47,7 @@
       opacity: 0;
       transform-origin: 50% 100%;
       transform: rotateX(120deg);
+      text-shadow: calc(0.1rem + 0.1vw) calc(0.1rem + 0.1vw) rgb(110, 110, 110);
     }
 
     .titleAppears:nth-of-type(2) {

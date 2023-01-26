@@ -41,6 +41,7 @@
     width: fit-content;
     max-height: calc(50px + 1vw);
     object-fit: cover;
+    filter: drop-shadow(5px 5px 5px rgb(110, 110, 110));
   }
   .name {
     font-size: calc(1.5rem + 0.5vw);
@@ -49,6 +50,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    filter: drop-shadow(5px 5px 5px rgb(110, 110, 110));
   }
   > .back {
     position: absolute;

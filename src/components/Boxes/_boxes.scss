@@ -87,47 +87,75 @@
   top: calc(-7.5rem - 10vw);
   left: 0rem;
   animation: boxAnim 100s infinite linear;
+  @include xLarge {
+    top: -15rem;
+  }
 }
 
 .box-2 {
   top: calc(-5rem - 7.5vw);
   left: calc(5rem + 7.5vw);
   animation: boxAnim 100s -10s infinite linear;
+  @include xLarge {
+    top: -10.625rem;
+    left: 10.625rem;
+  }
 }
 
 .box-3 {
   top: calc(5rem + 7.5vw);
   left: calc(-5rem - 7.5vw);
   animation: boxAnim 100s -20s infinite linear;
+  @include xLarge {
+    top: 10.625rem;
+    left: -10.625rem;
+  }
 }
 
 .box-4 {
   top: 0rem;
   left: calc(-7.5rem - 10vw);
   animation: boxAnim 100s -30s infinite linear;
+  @include xLarge {
+    left: -15rem;
+  }
 }
 
 .box-5 {
   top: 0rem;
   left: calc(7.5rem + 10vw);
   animation: boxAnim 100s -40s infinite linear;
+  @include xLarge {
+    left: 15rem;
+  }
 }
 
 .box-6 {
   top: calc(-5rem - 7.5vw);
   left: calc(-5rem - 7.5vw);
   animation: boxAnim 100s -50s infinite linear;
+  @include xLarge {
+    top: -10.625rem;
+    left: -10.625rem;
+  }
 }
 
 .box-7 {
   top: calc(5rem + 7.5vw);
   left: calc(5rem + 7.5vw);
   animation: boxAnim 100s -60s infinite linear;
+  @include xLarge {
+    top: 10.625rem;
+    left: 10.625rem;
+  }
 }
 .box-8 {
   top: calc(7.5rem + 10vw);
   left: 0rem;
   animation: boxAnim 100s -70s infinite linear;
+  @include xLarge {
+    top: 15rem;
+  }
 }
 
 .box div {

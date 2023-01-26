@@ -15,7 +15,8 @@
   }
   .label {
     align-items: center;
-    background: rgb(182, 182, 182);
+    background: $colorLight;
+
     border-radius: 3.125rem;
     box-shadow: 0.125rem 0.0625rem 0.0625rem $colorPrimary;
     cursor: pointer;
