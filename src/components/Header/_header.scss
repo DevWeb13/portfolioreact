@@ -2,7 +2,7 @@
   position: relative;
   align-items: center;
   display: flex;
-  height: $headerHeightXSmall;
+  min-height: $headerHeightXSmall;
   justify-content: space-between;
   max-width: 100vw;
   .logo {
@@ -52,7 +52,7 @@
 
 @include medium {
   .header {
-    height: $headerHeightMedium;
+    min-height: $headerHeightMedium;
     .logo {
       width: 15.625rem;
     }
