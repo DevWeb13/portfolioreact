@@ -31,6 +31,7 @@ function ProjectCard({ project }) {
           <ButtonLink href={project.link} text="Visit site" />
           <ButtonLink href={project.gitHub} text="Visit GitHub" />
         </div>
+        <p className="projectsDate">{project.date}</p>
       </div>
     </div>
   );
