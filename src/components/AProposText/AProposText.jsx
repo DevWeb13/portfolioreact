@@ -7,7 +7,7 @@ const ButtonLink = lazy(() => import('../ButtonLink/ButtonLink'));
 
 function AProposText() {
   useEffect(() => {
-    const paragraphs = document.querySelectorAll('h3');
+    const paragraphs = document.querySelectorAll('.AProposeTextH3');
     let delay = 0;
     const interval = 500; // 1 seconde
 
@@ -25,47 +25,47 @@ function AProposText() {
 
   return (
     <section id="AProposTextWrapper">
-      <h3>Bonjour et bienvenue sur mon site web!</h3>
-      <h3>
+      <p className="AProposeTextH3">Bonjour et bienvenue sur mon site web!</p>
+      <p className="AProposeTextH3">
         Je suis un développeur web passionné par les nouvelles technologies et
         j&apos;adore relever de nouveaux défis pour améliorer mes compétences.
-      </h3>
-      <h3>
+      </p>
+      <p className="AProposeTextH3">
         Si vous jetez un coup d&apos;œil à la page{' '}
         <NavLink to="/projets">Mes Projets</NavLink> , vous pourrez voir les
         différents projets sur lesquels j&apos;ai travaillé.
-      </h3>
-      <h3>
+      </p>
+      <p className="AProposeTextH3">
         Ma passion pour le développement web m&apos;a conduit à obtenir une
         certification RNCP de niveau 6 (bac +3/4) &apos;DÉVELOPPEUR
         D&apos;APPLICATION&apos;.
-      </h3>
-      <h3>
+      </p>
+      <p className="AProposeTextH3">
         <ButtonLink
           href="./titre-a-finalite-professionnelle_OpenClassrooms_Loic_Giuliano_20221221.pdf"
           text="Cliquer ici pour télécharger mon diplome"
           iconFontAwesome={faFilePdf}
         />
-      </h3>
-      <h3>
+      </p>
+      <p className="AProposeTextH3">
         J&apos;ai également acquis une solide expérience dans ce domaine à
         travers mes études et mes projets personnels.
-      </h3>
+      </p>
 
-      <h3>
+      <p className="AProposeTextH3">
         Vous cherchez un développeur web compétent et motivé pour réaliser vos
         projets de manière professionnelle et efficiente ?
-      </h3>
-      <h3>Je suis là pour vous !</h3>
-      <h3>
+      </p>
+      <p className="AProposeTextH3">Je suis là pour vous !</p>
+      <p className="AProposeTextH3">
         Mes compétences et mon expérience en développement d&apos;applications
         web sont à votre disposition pour vous aider à atteindre vos objectifs.
-      </h3>
-      <h3>
+      </p>
+      <p className="AProposeTextH3">
         N&apos;hésitez pas à me contacter pour plus d&apos;informations ou pour
         discuter de votre projet en détail. Je suis impatient de vous aider à
         réussir.
-      </h3>
+      </p>
     </section>
   );
 }

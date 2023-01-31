@@ -21,6 +21,7 @@ function ProjectCard({ project }) {
                   src={displayLogo(technology)}
                   alt={technology}
                   key={technology}
+                  loading="lazy"
                 />
               )
             );

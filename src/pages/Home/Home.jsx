@@ -9,6 +9,7 @@ const AnimatedTextAndShadow = lazy(() =>
   import('../../components/AnimatedTextAndShadow/AnimatedTextAndShadow'),
 );
 const Boxes = lazy(() => import('../../components/Boxes/Boxes'));
+const Bars = lazy(() => import('../../components/Bars/Bars'));
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function Home() {
       <AProposText />
       <ImgBack />
       <AnimatedTextAndShadow title="COMPÉTENCES" />
+      <Bars />
       <Boxes />
     </div>
   );
