@@ -38,6 +38,7 @@ function Bars() {
       <Progress technology="express" max={progressMaxValue} date={2021} />
       <Progress technology="mongo" max={progressMaxValue} date={2021} />
       <Progress technology="vercel" max={progressMaxValue} date={2021} />
+      <Progress technology="gitHub" max={progressMaxValue} date={2020} />
     </section>
   );
 }

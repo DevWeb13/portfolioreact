@@ -11,6 +11,7 @@ import webpack from '../assets/webpack-svgrepo-com.svg';
 import css from '../assets/css3-logo-svgrepo-com.svg';
 import recharts from '../assets/recharts.png';
 import bootstrap from '../assets/bootstrap-svgrepo-com.svg';
+import gitHub from '../assets/github.svg';
 
 const images = {
   html,
@@ -26,6 +27,7 @@ const images = {
   css,
   recharts,
   bootstrap,
+  gitHub,
 };
 
 /**

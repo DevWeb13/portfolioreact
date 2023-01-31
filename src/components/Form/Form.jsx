@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+import { useQueryClient } from 'react-query';
 import { TextField } from '@mui/material';
 import ReactModal from 'react-modal';
 import postEmail from '../../services/emailManager';
@@ -13,6 +14,12 @@ ReactModal.setAppElement('#root');
 function Form() {
   const [loader, setLoader] = React.useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const queryClient = useQueryClient();
+  /**
+   * @type {boolean}
+   */
+  const isDev = queryClient.getQueryData('isDev') || false;
 
   const {
     register,
@@ -41,7 +48,7 @@ function Form() {
     if (!newComment.tel) {
       newComment.tel = 'XX XX XX XX XX';
     }
-    postEmail(newComment);
+    postEmail(newComment, isDev);
     reset();
     setIsOpen(true);
     setLoader(false);

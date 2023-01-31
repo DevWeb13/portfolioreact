@@ -17,7 +17,10 @@ function Projets() {
   const [alignment, setAlignment] = React.useState('Tous');
 
   const queryClient = useQueryClient();
-  const isDev = queryClient.getQueryData('isDev');
+  /**
+   * @type {boolean}
+   */
+  const isDev = queryClient.getQueryData('isDev') || false;
 
   const queryKey = ['projects'];
   const { isLoading, data } = useQuery(queryKey, () => getProjectsList(isDev), {

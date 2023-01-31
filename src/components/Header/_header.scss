@@ -155,6 +155,10 @@
       background: $colorDarkPrimary;
       box-shadow: 0 0 20px 5px $colorDarkPrimary;
     }
+    #headerFixed {
+      background-color: $colorDark;
+      box-shadow: 0 0 20px 5px $colorDarkPrimary;
+    }
     #backToTop {
       color: $colorDarkPrimary;
       background: rgba(255, 255, 255, 0.25);

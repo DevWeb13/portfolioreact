@@ -11,6 +11,7 @@ $colorDark: #333;
 
 $colorDarkPrimary: #09fbba;
 $colorDarkPrimaryDarken: darken($colorDarkPrimary, 20%);
+$colorDarkPrimaryLighten: lighten($colorDarkPrimary, 20%);
 
 /******************* HEADER HEIGHT *******************/
 $headerHeightXSmall: 9.375rem;

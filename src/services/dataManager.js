@@ -1,3 +1,8 @@
+/**
+ * It fetches the projects list from the back-end and returns it as a JSON object
+ * @param   {boolean}  isDev - if the app is in development mode
+ * @returns {Promise} - a promise.
+ */
 export default async function getProjectsList(isDev) {
   console.log(isDev);
   if (isDev) {

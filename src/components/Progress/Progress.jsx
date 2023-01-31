@@ -16,6 +16,11 @@ function Progress({ technology, max, date }) {
   const [displayCount, setDisplayCount] = useState(0);
   const [isVisibled, setIsVisibled] = useState(false);
 
+  /**
+   * It takes a year as an argument and returns the number of years since that year
+   * @param {number} year - The year
+   * @returns {number} - The number of years between the current year and the year passed in as an argument.
+   */
   function findHowManyYears(year) {
     const newDate = new Date();
     const currentYear = newDate.getFullYear();
@@ -69,15 +74,25 @@ function Progress({ technology, max, date }) {
 
   return (
     <section className="progressContainer">
-      <img src={displayLogo(technology)} alt={technology} key={technology} />
+      {displayLogo(technology) === '' ? (
+        <h2 className="techName">{technology.toUpperCase()}</h2>
+      ) : (
+        <img
+          src={displayLogo(technology)}
+          alt={technology}
+          key={technology}
+          className="techImg"
+        />
+      )}
+
       <div id={`progress${technology}`} className="progress">
         {displayCount <= 1 ? (
           <div className="progress-done" style={style}>
-            {displayCount}an
+            <p>{`${technology.toUpperCase()}: ${displayCount}`} an</p>
           </div>
         ) : (
           <div className="progress-done" style={style}>
-            {displayCount}ans
+            <p>{`${technology.toUpperCase()}: ${displayCount}`} ans</p>
           </div>
         )}
       </div>
