@@ -10,10 +10,10 @@ const Projets = lazy(() => import('./pages/Projects/Projects'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 
 function App({ isDev }) {
-  useQuery('isDev', () => isDev, {
-    staleTime: 1000 * 60 * 60 * 24,
-    cacheTime: 1000 * 60 * 60 * 24,
-  });
+  // useQuery('isDev', () => isDev, {
+  //   staleTime: 1000 * 60 * 60 * 24,
+  //   cacheTime: 1000 * 60 * 60 * 24,
+  // });
   useEffect(() => {
     window.addEventListener('beforeunload', () => {
       window.scrollTo(0, 0);

@@ -16,12 +16,13 @@ const ProjectCard = lazy(() =>
 function Projets() {
   const [alignment, setAlignment] = React.useState('Tous');
 
-  const queryClient = useQueryClient();
-  /**
-   * @type {boolean}
-   */
-  const isDev = queryClient.getQueryData('isDev') || false;
+  // const queryClient = useQueryClient();
+  // /**
+  //  * @type {boolean}
+  //  */
+  // const isDev = queryClient.getQueryData('isDev') || false;
 
+  const isDev = process.env.NODE_ENV === 'development';
   const queryKey = ['projects'];
   const { isLoading, data } = useQuery(queryKey, () => getProjectsList(isDev), {
     staleTime: 1000 * 60 * 60 * 24,
