@@ -7,10 +7,22 @@
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/DevWeb13/portfolioreact/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/DevWeb13/portfolioreact/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+## Project Realized By Giuliano Loic
+
+## Made With
+
+![JavaScript](https://img.shields.io/badge/Language-JS-yellow) ![REACT](https://img.shields.io/badge/Framework-React-blue) ![SASS](https://img.shields.io/badge/style-SASS-ff69b4) ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black) ![fontawesome](https://img.shields.io/badge/Library-fontawesome-blueviolet) ![IDE](https://img.shields.io/badge/IDE-VsCode-blue) ![NODE](https://img.shields.io/badge/Node-v16.13.0-ff69b4) ![jsdoc](https://img.shields.io/badge/Library-jsdoc-blueviolet) 
+
+|                                                                                                              summary                                                                                                               |                                                                                                           score                                                                                                            |                                                                                                      to do                                                                                                      |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|              [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_portfolioreact&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=DevWeb13_portfolioreact)              |  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_portfolioreact&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=DevWeb13_portfolioreact)  |  [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022)   |
+| [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022) | [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022) | [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022) |
+|                   [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=bugs)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022)                   |    [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022)    |                                                                                                                                                                                                                 |
+|        [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=DevWeb13_giulianoloic_14_28052022&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022)        |                                                                                                                                                                                                                            |
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=DevWeb13_giulianoloic_14_28052022)](https://sonarcloud.io/summary/new_code?id=DevWeb13_giulianoloic_14_28052022)
+
+*Two repositories are needed to enable the project to run*
 
 </div>
 
