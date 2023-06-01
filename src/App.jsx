@@ -34,7 +34,7 @@ function App({ isDev }) {
       color: ['#145da0', '#09fbba', '#1e84e3'],
       connectParticles: false,
       maxParticles: 1000,
-      speed: 0.05,
+      speed: 0.1,
     });
   }, []);
   return (
