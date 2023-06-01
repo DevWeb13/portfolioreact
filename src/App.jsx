@@ -1,7 +1,8 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useQuery } from 'react-query';
+// import { useQuery } from 'react-query';
+import Particles from 'particlesjs';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
 
@@ -14,6 +15,7 @@ function App({ isDev }) {
   //   staleTime: 1000 * 60 * 60 * 24,
   //   cacheTime: 1000 * 60 * 60 * 24,
   // });
+
   useEffect(() => {
     window.addEventListener('beforeunload', () => {
       window.scrollTo(0, 0);
@@ -24,6 +26,16 @@ function App({ isDev }) {
         window.scrollTo(0, 0);
       });
     };
+  }, []);
+
+  useEffect(() => {
+    Particles.init({
+      selector: '.background',
+      color: ['#145da0', '#09fbba', '#1e84e3'],
+      connectParticles: false,
+      maxParticles: 1000,
+      speed: 0.05,
+    });
   }, []);
   return (
     <div className="App">

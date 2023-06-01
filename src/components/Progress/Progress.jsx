@@ -66,7 +66,7 @@ function Progress({ technology, max, date }) {
             setDisplayCount(Math.ceil((count * max) / 100));
           }
         }
-      }, 50);
+      }, 20);
       return () => clearInterval(interval);
     }
     return () => {};
@@ -92,7 +92,9 @@ function Progress({ technology, max, date }) {
           </div>
         ) : (
           <div className="progress-done" style={style}>
-            <p>{`${technology.toUpperCase()}: ${displayCount}`} ans</p>
+            <p className="techName">
+              {`${technology.toUpperCase()}: ${displayCount}`} ans
+            </p>
           </div>
         )}
       </div>
