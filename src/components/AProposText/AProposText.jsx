@@ -43,7 +43,7 @@ function AProposText() {
       <p className="AProposeTextH3">
         <ButtonLink
           href="./titre-a-finalite-professionnelle_OpenClassrooms_Loic_Giuliano_20221221.pdf"
-          text="Cliquer ici pour télécharger mon diplome"
+          text="Diplome"
           iconFontAwesome={faFilePdf}
         />
       </p>

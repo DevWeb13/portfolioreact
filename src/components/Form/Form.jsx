@@ -34,7 +34,7 @@ function Form() {
     if (!ip) {
       // eslint-disable-next-line no-alert
       alert(
-        "Error: Votre navigateur empéche l'envoi du commentaire. Veuillez essayer de désactiver votre bloqueur de publicité",
+        "Error: Votre navigateur empéche l'envoi du message. Veuillez essayer de désactiver votre bloqueur de publicité",
       );
       setLoader(false);
       return;

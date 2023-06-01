@@ -9,14 +9,24 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: $gapSmall;
+    height: calc(100vh - $headerHeightXSmall - $gap);
+    @include small {
+      height: calc(100vh - $headerHeightSmall - $gap);
+    }
+    @include medium {
+      height: calc(100vh - $headerHeightMedium - $gap);
+    }
     h1 {
       align-items: center;
       display: flex;
       flex-direction: column;
       font-size: calc(1rem + 6vw);
+      justify-content: space-around;
       gap: $gapSmall;
       perspective: 500px;
+
       @include small {
         align-items: unset;
       }
