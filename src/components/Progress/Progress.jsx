@@ -53,7 +53,22 @@ function Progress({ technology, max, date }) {
   }, []);
 
   useEffect(() => {
-    if (isVisibled) {
+    // Si la taille d'écran est inférieur à 768px, on affiche la barre de progression pleine
+    if (window.innerWidth < 768) {
+      if (count < howManyYearsPerCent) {
+        const newProgress = {
+          opacity: 1,
+          width: `${count + 1}%`,
+        };
+        setStyle(newProgress);
+        setCount(count + 1);
+        if (displayCount !== Math.ceil((count * max) / 100)) {
+          setDisplayCount(Math.ceil((count * max) / 100));
+        }
+      }
+    }
+    // Si la taille d'écran est supérieur à 768px, on affiche la barre de progression en fonction de l'intersection
+    if (window.innerWidth >= 768 && isVisibled) {
       const interval = setInterval(() => {
         if (count < howManyYearsPerCent) {
           const newProgress = {
