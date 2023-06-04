@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: space-around;
     gap: $gapSmall;
-    height: calc(100vh - $headerHeightXSmall - $gap);
+    height: calc(100vh - $headerHeightXSmall - $gap - 1rem);
     @include small {
       height: calc(100vh - $headerHeightSmall - $gap);
     }
