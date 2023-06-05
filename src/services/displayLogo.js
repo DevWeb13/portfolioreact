@@ -12,6 +12,9 @@ import css from '../assets/css3-logo-svgrepo-com.svg';
 import recharts from '../assets/recharts.png';
 import bootstrap from '../assets/bootstrap-svgrepo-com.svg';
 import gitHub from '../assets/github.svg';
+import tailwind from '../assets/tailwindcss-svgrepo-com.svg';
+import sanity from '../assets/sanity-svgrepo-com.svg';
+import netlify from '../assets/netlify-svgrepo-com.svg';
 
 const images = {
   html,
@@ -28,6 +31,9 @@ const images = {
   recharts,
   bootstrap,
   gitHub,
+  tailwind,
+  sanity,
+  netlify,
 };
 
 /**

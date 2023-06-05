@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import propType from 'prop-types';
 import displayLogo from '../../services/displayLogo';
 
@@ -15,6 +15,7 @@ function Progress({ technology, max, date }) {
   const [count, setCount] = useState(0);
   const [displayCount, setDisplayCount] = useState(0);
   const [isVisibled, setIsVisibled] = useState(false);
+  const progressRef = useRef(null);
 
   /**
    * It takes a year as an argument and returns the number of years since that year
@@ -46,10 +47,11 @@ function Progress({ technology, max, date }) {
       },
     );
 
-    observer.observe(
-      document.querySelector(`#progress${technology}`) ||
-        document.createElement('div'),
-    );
+    observer.observe(progressRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -100,7 +102,7 @@ function Progress({ technology, max, date }) {
         />
       )}
 
-      <div id={`progress${technology}`} className="progress">
+      <div ref={progressRef} className="progress">
         {displayCount <= 1 ? (
           <div className="progress-done" style={style}>
             <p>{`${technology.toUpperCase()}: ${displayCount}`} an</p>

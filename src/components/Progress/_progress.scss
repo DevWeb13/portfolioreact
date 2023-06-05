@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
 
-  height: 30px;
+  // height: 30px;
   font-size: 0.5rem;
   @include small {
     height: 40px;
@@ -85,13 +85,6 @@
   justify-content: center;
   transition: 0.05s ease;
   color: white;
-  font-size: calc(0.5rem + 1vw);
-  @include small {
-    font-size: calc(1rem + 1vw);
-  }
-  @include xLarge {
-    font-size: 1.8rem;
-  }
   p {
     overflow: hidden;
     white-space: nowrap;
