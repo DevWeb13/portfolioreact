@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from 'react';
+import React, { lazy, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import addIntersectionObserver from '../../services/addIntersectionObserver';
@@ -6,14 +6,15 @@ import addIntersectionObserver from '../../services/addIntersectionObserver';
 const ButtonLink = lazy(() => import('../ButtonLink/ButtonLink'));
 
 function AProposText() {
+  const containerRef = useRef(null);
   useEffect(() => {
-    const paragraphs = document.querySelectorAll('.AProposeTextH3');
+    const container = containerRef.current;
+    const paragraphs = container.querySelectorAll('.AProposeTextH3');
     let delay = 0;
     const interval = 500; // 1 seconde
 
+    const observer = addIntersectionObserver('visible', { threshold: 0.5 });
     setTimeout(() => {
-      const observer = addIntersectionObserver('visible', { threshold: 0.5 });
-
       paragraphs.forEach((paragraph) => {
         setTimeout(() => {
           observer.observe(paragraph);
@@ -21,10 +22,16 @@ function AProposText() {
         delay += interval;
       });
     }, 3000);
+
+    return () => {
+      paragraphs.forEach((paragraph) => {
+        observer.unobserve(paragraph);
+      });
+    };
   }, []);
 
   return (
-    <section id="AProposTextWrapper">
+    <section id="AProposTextWrapper" ref={containerRef}>
       <p className="AProposeTextH3">Bonjour et bienvenue sur mon site web!</p>
       <p className="AProposeTextH3">
         Je suis un développeur web passionné par les nouvelles technologies et
