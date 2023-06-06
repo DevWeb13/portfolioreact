@@ -35,7 +35,7 @@ function App({ isDev }) {
       connectParticles: false,
       maxParticles: 400,
       speed: 0.1,
-      sizeVariations: 5,
+      sizeVariations: 3,
       responsive: [
         {
           breakpoint: 768,
@@ -60,6 +60,7 @@ function App({ isDev }) {
   }, []);
   return (
     <div className="App">
+      <canvas className="background" />
       <BrowserRouter>
         <Header />
         <Suspense fallback={<Loading />}>
